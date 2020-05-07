@@ -1,1 +1,1 @@
-#define NAUT_CONFIG_USE_GCC 1
+#undef NAUT_CONFIG_USE_GCC
