@@ -1,28 +1,6 @@
-/home/446/openmp/lib/libomp.a(kmp_i18n.cpp.o): In function `__kmp_i18n_do_catopen()':
-kmp_i18n.cpp:(.text+0x1be): undefined reference to `strerror_r'
-kmp_i18n.cpp:(.text+0x3ae): undefined reference to `catgets'
-kmp_i18n.cpp:(.text+0x3f7): undefined reference to `catclose'
-/home/446/openmp/lib/libomp.a(kmp_i18n.cpp.o): In function `__kmp_i18n_catclose':
-kmp_i18n.cpp:(.text+0x554): undefined reference to `catclose'
-/home/446/openmp/lib/libomp.a(kmp_i18n.cpp.o): In function `__kmp_i18n_catgets':
-kmp_i18n.cpp:(.text+0x62e): undefined reference to `catgets'
-/home/446/openmp/lib/libomp.a(kmp_i18n.cpp.o): In function `__kmp_msg_format':
-kmp_i18n.cpp:(.text+0xd94): undefined reference to `catgets'
-/home/446/openmp/lib/libomp.a(kmp_i18n.cpp.o): In function `__kmp_msg_error_code':
-kmp_i18n.cpp:(.text+0xe32): undefined reference to `strerror_r'
 /home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_vprintf':
 kmp_io.cpp:(.text+0x7): undefined reference to `stdout'
 kmp_io.cpp:(.text+0xc): undefined reference to `stderr'
-/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_do_serial_initialize()':
-kmp_runtime.cpp:(.text+0x620): undefined reference to `atexit'
-/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_internal_end()':
-kmp_runtime.cpp:(.text+0x86f5): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_register_library_startup()':
-kmp_runtime.cpp:(.text+0x88d2): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_aux_capture_affinity':
-kmp_runtime.cpp:(.text+0xa0a7): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_settings.cpp.o): In function `__kmp_stg_init()':
-kmp_settings.cpp:(.text+0x9e2): undefined reference to `qsort'
 /home/446/openmp/lib/libomp.a(kmp_settings.cpp.o): In function `__kmp_stg_parse_hw_subset(char const*, char const*, void*)':
 kmp_settings.cpp:(.text+0xbcc4): undefined reference to `toupper'
 /home/446/openmp/lib/libomp.a(kmp_str.cpp.o): In function `__kmp_str_token':
@@ -30,27 +8,9 @@ kmp_str.cpp:(.text+0x1301): undefined reference to `strtok_r'
 /home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_host_name':
 kmp_utility.cpp:(.text+0x361): undefined reference to `gethostname'
 /home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_file_name':
-kmp_utility.cpp:(.text+0x54b): undefined reference to `getpid'
 kmp_utility.cpp:(.text+0x5b0): undefined reference to `gethostname'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_aux_affinity_initialize()':
-kmp_affinity.cpp:(.text+0x1eb9): undefined reference to `qsort'
-kmp_affinity.cpp:(.text+0x4946): undefined reference to `qsort'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_set_init_mask':
-kmp_affinity.cpp:(.text+0x5869): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_set_place':
-kmp_affinity.cpp:(.text+0x5acc): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_balanced_affinity':
-kmp_affinity.cpp:(.text+0x6276): undefined reference to `getpid'
-kmp_affinity.cpp:(.text+0x6e46): undefined reference to `getpid'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_x2apicid_map(AddrUnsPair**, kmp_i18n_id*)':
-kmp_affinity.cpp:(.text+0x77e1): undefined reference to `qsort'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_apicid_map(AddrUnsPair**, kmp_i18n_id*)':
-kmp_affinity.cpp:(.text+0x98e1): undefined reference to `qsort'
 /home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_cpuinfo_map(AddrUnsPair**, int*, kmp_i18n_id*, _IO_FILE*)':
-kmp_affinity.cpp:(.text+0xad83): undefined reference to `qsort'
 kmp_affinity.cpp:(.text+0xb376): undefined reference to `fgetc'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `hierarchy_info::init(AddrUnsPair*, int)':
-kmp_affinity.cpp:(.text._ZN14hierarchy_info4initEP11AddrUnsPairi[_ZN14hierarchy_info4initEP11AddrUnsPairi]+0x95): undefined reference to `qsort'
 /home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_terminate_thread':
 z_Linux_util.cpp:(.text+0x5b0): undefined reference to `pthread_cancel'
 z_Linux_util.cpp:(.text+0x5f4): undefined reference to `sched_yield'
@@ -199,8 +159,6 @@ z_Linux_util.cpp:(.text+0x387c): undefined reference to `gettimeofday'
 /home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_initialize_system_tick':
 z_Linux_util.cpp:(.text+0x38b3): undefined reference to `gettimeofday'
 z_Linux_util.cpp:(.text+0x38e3): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_is_address_mapped':
-z_Linux_util.cpp:(.text+0x39d2): undefined reference to `getpid'
 /home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_get_load_balance':
 z_Linux_util.cpp:(.text+0x3b43): undefined reference to `gettimeofday'
 z_Linux_util.cpp:(.text+0x3bcd): undefined reference to `opendir'
@@ -314,6 +272,4 @@ kmp_environment.cpp:(.text+0xec): undefined reference to `setenv'
 kmp_environment.cpp:(.text+0x171): undefined reference to `unsetenv'
 /home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_blk_init':
 kmp_environment.cpp:(.text+0x200): undefined reference to `environ'
-/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_blk_sort':
-kmp_environment.cpp:(.text+0x466): undefined reference to `qsort'
 make: *** [nautilus.bin] Error 1

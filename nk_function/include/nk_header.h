@@ -3,6 +3,6 @@
 
 #include "nl_types.h"
 
-nl_card catopen(const char *name, int flag);
+nl_catd catopen(const char *name, int flag);
 
 #endif

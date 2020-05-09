@@ -1,0 +1,307 @@
+/home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_vprintf':
+kmp_io.cpp:(.text+0x7): undefined reference to `stdout'
+kmp_io.cpp:(.text+0xc): undefined reference to `stderr'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_do_serial_initialize()':
+kmp_runtime.cpp:(.text+0x620): undefined reference to `atexit'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_internal_end()':
+kmp_runtime.cpp:(.text+0x86f5): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_register_library_startup()':
+kmp_runtime.cpp:(.text+0x88d2): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_aux_capture_affinity':
+kmp_runtime.cpp:(.text+0xa0a7): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_settings.cpp.o): In function `__kmp_stg_init()':
+kmp_settings.cpp:(.text+0x9e2): undefined reference to `qsort'
+/home/446/openmp/lib/libomp.a(kmp_settings.cpp.o): In function `__kmp_stg_parse_hw_subset(char const*, char const*, void*)':
+kmp_settings.cpp:(.text+0xbcc4): undefined reference to `toupper'
+/home/446/openmp/lib/libomp.a(kmp_str.cpp.o): In function `__kmp_str_token':
+kmp_str.cpp:(.text+0x1301): undefined reference to `strtok_r'
+/home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_host_name':
+kmp_utility.cpp:(.text+0x361): undefined reference to `gethostname'
+/home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_file_name':
+kmp_utility.cpp:(.text+0x54b): undefined reference to `getpid'
+kmp_utility.cpp:(.text+0x5b0): undefined reference to `gethostname'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_aux_affinity_initialize()':
+kmp_affinity.cpp:(.text+0x1eb9): undefined reference to `qsort'
+kmp_affinity.cpp:(.text+0x4946): undefined reference to `qsort'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_set_init_mask':
+kmp_affinity.cpp:(.text+0x5869): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_set_place':
+kmp_affinity.cpp:(.text+0x5acc): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_balanced_affinity':
+kmp_affinity.cpp:(.text+0x6276): undefined reference to `getpid'
+kmp_affinity.cpp:(.text+0x6e46): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_x2apicid_map(AddrUnsPair**, kmp_i18n_id*)':
+kmp_affinity.cpp:(.text+0x77e1): undefined reference to `qsort'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_apicid_map(AddrUnsPair**, kmp_i18n_id*)':
+kmp_affinity.cpp:(.text+0x98e1): undefined reference to `qsort'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_cpuinfo_map(AddrUnsPair**, int*, kmp_i18n_id*, _IO_FILE*)':
+kmp_affinity.cpp:(.text+0xad83): undefined reference to `qsort'
+kmp_affinity.cpp:(.text+0xb376): undefined reference to `fgetc'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `hierarchy_info::init(AddrUnsPair*, int)':
+kmp_affinity.cpp:(.text._ZN14hierarchy_info4initEP11AddrUnsPairi[_ZN14hierarchy_info4initEP11AddrUnsPairi]+0x95): undefined reference to `qsort'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_terminate_thread':
+z_Linux_util.cpp:(.text+0x5b0): undefined reference to `pthread_cancel'
+z_Linux_util.cpp:(.text+0x5f4): undefined reference to `sched_yield'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_yield':
+z_Linux_util.cpp:(.text+0x671): undefined reference to `sched_yield'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_create_worker':
+z_Linux_util.cpp:(.text+0x6d3): undefined reference to `pthread_attr_init'
+z_Linux_util.cpp:(.text+0x6ec): undefined reference to `pthread_attr_setdetachstate'
+z_Linux_util.cpp:(.text+0x718): undefined reference to `pthread_attr_setstacksize'
+z_Linux_util.cpp:(.text+0x752): undefined reference to `pthread_attr_setstacksize'
+z_Linux_util.cpp:(.text+0x779): undefined reference to `pthread_create'
+z_Linux_util.cpp:(.text+0x7a2): undefined reference to `pthread_attr_destroy'
+z_Linux_util.cpp:(.text+0x838): undefined reference to `pthread_self'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_set_stack_info(int, kmp_info*)':
+z_Linux_util.cpp:(.text+0xcf8): undefined reference to `pthread_attr_init'
+z_Linux_util.cpp:(.text+0xd07): undefined reference to `pthread_self'
+z_Linux_util.cpp:(.text+0xd17): undefined reference to `pthread_getattr_np'
+z_Linux_util.cpp:(.text+0xd38): undefined reference to `pthread_attr_getstack'
+z_Linux_util.cpp:(.text+0xd4f): undefined reference to `pthread_attr_destroy'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_launch_worker(void*)':
+z_Linux_util.cpp:(.text+0xfc9): undefined reference to `pthread_setspecific'
+z_Linux_util.cpp:(.text+0xff6): undefined reference to `pthread_setcanceltype'
+z_Linux_util.cpp:(.text+0x1009): undefined reference to `pthread_setcancelstate'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_exit_thread':
+z_Linux_util.cpp:(.text+0x11e5): undefined reference to `pthread_exit'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_reap_worker':
+z_Linux_util.cpp:(.text+0x11f9): undefined reference to `pthread_join'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_install_signals':
+z_Linux_util.cpp:(.text+0x1222): undefined reference to `sigemptyset'
+z_Linux_util.cpp:(.text+0x124a): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1264): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1295): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x12b3): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x12cc): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x12e5): undefined reference to `sigaction'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o):z_Linux_util.cpp:(.text+0x12fe): more undefined references to `sigaction' follow
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_install_signals':
+z_Linux_util.cpp:(.text+0x1435): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x1459): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1473): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x14a0): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x14b8): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x14dc): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x14f6): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1523): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x153b): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x155f): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1579): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x15a6): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x15be): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x15e2): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x15fc): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1629): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1641): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x1665): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x167f): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x16ac): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x16c4): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x16e8): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1702): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x172f): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1747): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x176b): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1785): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x17b2): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x17ca): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x17ee): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x1808): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1835): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x184d): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x1871): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x188b): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x18b8): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x18d0): undefined reference to `sigaddset'
+z_Linux_util.cpp:(.text+0x18f4): undefined reference to `sigfillset'
+z_Linux_util.cpp:(.text+0x190e): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1937): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1953): undefined reference to `sigaddset'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_remove_signals':
+z_Linux_util.cpp:(.text+0x1a58): undefined reference to `sigismember'
+z_Linux_util.cpp:(.text+0x1a69): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1a88): undefined reference to `sigaction'
+z_Linux_util.cpp:(.text+0x1a98): undefined reference to `sigdelset'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_enable':
+z_Linux_util.cpp:(.text+0x1b4e): undefined reference to `pthread_setcancelstate'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_disable':
+z_Linux_util.cpp:(.text+0x1be4): undefined reference to `pthread_setcancelstate'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_register_atfork':
+z_Linux_util.cpp:(.text+0x1c91): undefined reference to `pthread_atfork'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_initialize':
+z_Linux_util.cpp:(.text+0x1e8e): undefined reference to `pthread_mutexattr_init'
+z_Linux_util.cpp:(.text+0x1e9e): undefined reference to `pthread_condattr_init'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_initialize_thread':
+z_Linux_util.cpp:(.text+0x1fe2): undefined reference to `pthread_cond_init'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_uninitialize_thread':
+z_Linux_util.cpp:(.text+0x2152): undefined reference to `pthread_cond_destroy'
+z_Linux_util.cpp:(.text+0x2168): undefined reference to `pthread_mutex_destroy'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_try_suspend_mx':
+z_Linux_util.cpp:(.text+0x2279): undefined reference to `pthread_mutex_trylock'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_32':
+z_Linux_util.cpp:(.text+0x24a5): undefined reference to `pthread_cond_wait'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_64':
+z_Linux_util.cpp:(.text+0x26a5): undefined reference to `pthread_cond_wait'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_oncore':
+z_Linux_util.cpp:(.text+0x28a5): undefined reference to `pthread_cond_wait'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_32':
+z_Linux_util.cpp:(.text+0x2a25): undefined reference to `pthread_cond_signal'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_64':
+z_Linux_util.cpp:(.text+0x2b78): undefined reference to `pthread_cond_signal'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_oncore':
+z_Linux_util.cpp:(.text+0x2cc8): undefined reference to `pthread_cond_signal'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_gtid_set_specific':
+z_Linux_util.cpp:(.text+0x2db0): undefined reference to `pthread_setspecific'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_gtid_get_specific':
+z_Linux_util.cpp:(.text+0x2e41): undefined reference to `pthread_getspecific'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_cpu_time':
+z_Linux_util.cpp:(.text+0x2e6a): undefined reference to `times'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_system_info':
+z_Linux_util.cpp:(.text+0x2eb8): undefined reference to `getrusage'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_system_time':
+z_Linux_util.cpp:(.text+0x2f93): undefined reference to `gettimeofday'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_clear_system_time':
+z_Linux_util.cpp:(.text+0x3080): undefined reference to `gettimeofday'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_from_file':
+z_Linux_util.cpp:(.text+0x31ce): undefined reference to `vfscanf'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_runtime_initialize':
+z_Linux_util.cpp:(.text+0x321f): undefined reference to `sysconf'
+z_Linux_util.cpp:(.text+0x3241): undefined reference to `getrlimit'
+z_Linux_util.cpp:(.text+0x3268): undefined reference to `sysconf'
+z_Linux_util.cpp:(.text+0x3277): undefined reference to `sysconf'
+z_Linux_util.cpp:(.text+0x3292): undefined reference to `sysconf'
+z_Linux_util.cpp:(.text+0x32bf): undefined reference to `pthread_key_create'
+z_Linux_util.cpp:(.text+0x32cf): undefined reference to `pthread_mutexattr_init'
+z_Linux_util.cpp:(.text+0x32fc): undefined reference to `pthread_condattr_init'
+z_Linux_util.cpp:(.text+0x3315): undefined reference to `pthread_cond_init'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_runtime_destroy':
+z_Linux_util.cpp:(.text+0x35b8): undefined reference to `pthread_key_delete'
+z_Linux_util.cpp:(.text+0x35c8): undefined reference to `pthread_mutex_destroy'
+z_Linux_util.cpp:(.text+0x35e0): undefined reference to `pthread_cond_destroy'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_thread_sleep':
+z_Linux_util.cpp:(.text+0x378e): undefined reference to `sleep'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_elapsed':
+z_Linux_util.cpp:(.text+0x37b3): undefined reference to `gettimeofday'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_now_nsec()':
+z_Linux_util.cpp:(.text+0x387c): undefined reference to `gettimeofday'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_initialize_system_tick':
+z_Linux_util.cpp:(.text+0x38b3): undefined reference to `gettimeofday'
+z_Linux_util.cpp:(.text+0x38e3): undefined reference to `gettimeofday'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_is_address_mapped':
+z_Linux_util.cpp:(.text+0x39d2): undefined reference to `getpid'
+/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_get_load_balance':
+z_Linux_util.cpp:(.text+0x3b43): undefined reference to `gettimeofday'
+z_Linux_util.cpp:(.text+0x3bcd): undefined reference to `opendir'
+z_Linux_util.cpp:(.text+0x3c03): undefined reference to `readdir'
+z_Linux_util.cpp:(.text+0x3c83): undefined reference to `opendir'
+z_Linux_util.cpp:(.text+0x3cda): undefined reference to `close'
+z_Linux_util.cpp:(.text+0x3ce4): undefined reference to `readdir'
+z_Linux_util.cpp:(.text+0x3d4f): undefined reference to `open'
+z_Linux_util.cpp:(.text+0x3dc4): undefined reference to `closedir'
+z_Linux_util.cpp:(.text+0x3df4): undefined reference to `readdir'
+z_Linux_util.cpp:(.text+0x3e61): undefined reference to `closedir'
+z_Linux_util.cpp:(.text+0x3e7b): undefined reference to `closedir'
+z_Linux_util.cpp:(.text+0x3e96): undefined reference to `close'
+/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_thread_num':
+kmp_ftn_cdecl.cpp:(.text+0x85f): undefined reference to `pthread_getspecific'
+/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_num_devices':
+kmp_ftn_cdecl.cpp:(.text+0x1059): undefined reference to `dlsym'
+kmp_ftn_cdecl.cpp:(.text+0x106f): undefined reference to `dlsym'
+/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_initial_device':
+kmp_ftn_cdecl.cpp:(.text+0x109e): undefined reference to `dlsym'
+/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_pause_resource':
+kmp_ftn_cdecl.cpp:(.text+0x16c1): undefined reference to `dlsym'
+/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_pause_resource_all':
+kmp_ftn_cdecl.cpp:(.text+0x16ff): undefined reference to `dlsym'
+/home/446/openmp/lib/libomp.a(ompt-general.cpp.o):ompt-general.cpp:(.text+0xb75): more undefined references to `dlsym' follow
+/home/446/openmp/lib/libomp.a(ompt-general.cpp.o): In function `ompt_pre_init':
+ompt-general.cpp:(.text+0xc89): undefined reference to `dlopen'
+ompt-general.cpp:(.text+0xc9b): undefined reference to `dlsym'
+ompt-general.cpp:(.text+0xce9): undefined reference to `dlopen'
+ompt-general.cpp:(.text+0xcfb): undefined reference to `dlsym'
+ompt-general.cpp:(.text+0xd23): undefined reference to `stderr'
+/home/446/openmp/lib/libomp.a(ompt-general.cpp.o): In function `ompt_get_proc_id()':
+ompt-general.cpp:(.text+0x20b9): undefined reference to `sched_getcpu'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul':
+kmp_atomic.cpp:(.text+0x1915): undefined reference to `__mulsc3'
+kmp_atomic.cpp:(.text+0x1938): undefined reference to `__mulsc3'
+kmp_atomic.cpp:(.text+0x1959): undefined reference to `__mulsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div':
+kmp_atomic.cpp:(.text+0x1a11): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x1ab4): undefined reference to `__divsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_mul':
+kmp_atomic.cpp:(.text+0x1fe0): undefined reference to `__muldc3'
+kmp_atomic.cpp:(.text+0x1ff2): undefined reference to `__muldc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div':
+kmp_atomic.cpp:(.text+0x2095): undefined reference to `__divdc3'
+kmp_atomic.cpp:(.text+0x213e): undefined reference to `__divdc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_mul':
+kmp_atomic.cpp:(.text+0x2516): undefined reference to `__mulxc3'
+kmp_atomic.cpp:(.text+0x25d2): undefined reference to `__mulxc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div':
+kmp_atomic.cpp:(.text+0x275a): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x2806): undefined reference to `__divxc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_rev':
+kmp_atomic.cpp:(.text+0x32dc): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x3388): undefined reference to `__divsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_rev':
+kmp_atomic.cpp:(.text+0x35f5): undefined reference to `__divdc3'
+kmp_atomic.cpp:(.text+0x369e): undefined reference to `__divdc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_rev':
+kmp_atomic.cpp:(.text+0x38e6): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x398e): undefined reference to `__divxc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul_cmplx8':
+kmp_atomic.cpp:(.text+0x3ebb): undefined reference to `__muldc3'
+kmp_atomic.cpp:(.text+0x3f73): undefined reference to `__muldc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cmplx8':
+kmp_atomic.cpp:(.text+0x401e): undefined reference to `__divdc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul_cpt':
+kmp_atomic.cpp:(.text+0x6e19): undefined reference to `__mulsc3'
+kmp_atomic.cpp:(.text+0x6e2d): undefined reference to `__mulsc3'
+kmp_atomic.cpp:(.text+0x6e41): undefined reference to `__mulsc3'
+kmp_atomic.cpp:(.text+0x6e55): undefined reference to `__mulsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cpt':
+kmp_atomic.cpp:(.text+0x6f0f): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x6fa0): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x6fdf): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x7038): undefined reference to `__divsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_mul_cpt':
+kmp_atomic.cpp:(.text+0x7536): undefined reference to `__muldc3'
+kmp_atomic.cpp:(.text+0x7603): undefined reference to `__muldc3'
+kmp_atomic.cpp:(.text+0x76c5): undefined reference to `__muldc3'
+kmp_atomic.cpp:(.text+0x76fa): undefined reference to `__muldc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_cpt':
+kmp_atomic.cpp:(.text+0x77c6): undefined reference to `__divdc3'
+kmp_atomic.cpp:(.text+0x7882): undefined reference to `__divdc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_mul_cpt':
+kmp_atomic.cpp:(.text+0x7d63): undefined reference to `__mulxc3'
+kmp_atomic.cpp:(.text+0x7e1a): undefined reference to `__mulxc3'
+kmp_atomic.cpp:(.text+0x7e7b): undefined reference to `__mulxc3'
+kmp_atomic.cpp:(.text+0x7ee4): undefined reference to `__mulxc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_cpt':
+kmp_atomic.cpp:(.text+0x809b): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x812a): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x8169): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x81c0): undefined reference to `__divxc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cpt_rev':
+kmp_atomic.cpp:(.text+0x8eaf): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x8f40): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x8f7f): undefined reference to `__divsc3'
+kmp_atomic.cpp:(.text+0x8fd8): undefined reference to `__divsc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_cpt_rev':
+kmp_atomic.cpp:(.text+0x92a4): undefined reference to `__divdc3'
+kmp_atomic.cpp:(.text+0x935f): undefined reference to `__divdc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_cpt_rev':
+kmp_atomic.cpp:(.text+0x9637): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x96c2): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x9705): undefined reference to `__divxc3'
+kmp_atomic.cpp:(.text+0x9760): undefined reference to `__divxc3'
+/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_set':
+kmp_environment.cpp:(.text+0xec): undefined reference to `setenv'
+/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_unset':
+kmp_environment.cpp:(.text+0x171): undefined reference to `unsetenv'
+/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_blk_init':
+kmp_environment.cpp:(.text+0x200): undefined reference to `environ'
+/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_blk_sort':
+kmp_environment.cpp:(.text+0x466): undefined reference to `qsort'
+make: *** [nautilus.bin] Error 1
