@@ -1,275 +1,772 @@
 /home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_vprintf':
-kmp_io.cpp:(.text+0x7): undefined reference to `stdout'
-kmp_io.cpp:(.text+0xc): undefined reference to `stderr'
+kmp_io.cpp:(.text+0x12): undefined reference to `stdout'
+kmp_io.cpp:(.text+0x1a): undefined reference to `stderr'
+kmp_io.cpp:(.text+0x72): undefined reference to `__vsnprintf_chk'
+kmp_io.cpp:(.text+0xa2): undefined reference to `__fprintf_chk'
+kmp_io.cpp:(.text+0xe4): undefined reference to `__vfprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_printf':
+kmp_io.cpp:(.text+0x1b2): undefined reference to `stderr'
+kmp_io.cpp:(.text+0x20a): undefined reference to `__vsnprintf_chk'
+kmp_io.cpp:(.text+0x23a): undefined reference to `__fprintf_chk'
+kmp_io.cpp:(.text+0x27f): undefined reference to `__vfprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_printf_no_lock':
+kmp_io.cpp:(.text+0x353): undefined reference to `stderr'
+kmp_io.cpp:(.text+0x3b6): undefined reference to `__vsnprintf_chk'
+kmp_io.cpp:(.text+0x3e6): undefined reference to `__fprintf_chk'
+kmp_io.cpp:(.text+0x427): undefined reference to `__vfprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_io.cpp.o): In function `__kmp_fprintf':
+kmp_io.cpp:(.text+0x511): undefined reference to `stdout'
+kmp_io.cpp:(.text+0x519): undefined reference to `stderr'
+kmp_io.cpp:(.text+0x571): undefined reference to `__vsnprintf_chk'
+kmp_io.cpp:(.text+0x5a1): undefined reference to `__fprintf_chk'
+kmp_io.cpp:(.text+0x5df): undefined reference to `__vfprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_print_storage_map_gtid.constprop.24':
+kmp_runtime.cpp:(.text+0xe8d): undefined reference to `__snprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_print_storage_map_gtid':
+kmp_runtime.cpp:(.text+0x129d): undefined reference to `__snprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_runtime.cpp.o): In function `__kmp_warn':
+kmp_runtime.cpp:(.text+0x1ba6): undefined reference to `__snprintf_chk'
 /home/446/openmp/lib/libomp.a(kmp_settings.cpp.o): In function `__kmp_stg_parse_hw_subset(char const*, char const*, void*)':
-kmp_settings.cpp:(.text+0xbcc4): undefined reference to `toupper'
+kmp_settings.cpp:(.text+0x8b94): undefined reference to `toupper'
+/home/446/openmp/lib/libomp.a(kmp_str.cpp.o): In function `__kmp_str_buf_vprint':
+kmp_str.cpp:(.text+0x498): undefined reference to `__vsnprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_str.cpp.o): In function `__kmp_str_format':
+kmp_str.cpp:(.text+0xa19): undefined reference to `__vsnprintf_chk'
 /home/446/openmp/lib/libomp.a(kmp_str.cpp.o): In function `__kmp_str_token':
-kmp_str.cpp:(.text+0x1301): undefined reference to `strtok_r'
-/home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_host_name':
-kmp_utility.cpp:(.text+0x361): undefined reference to `gethostname'
+kmp_str.cpp:(.text+0x1541): undefined reference to `strtok_r'
 /home/446/openmp/lib/libomp.a(kmp_utility.cpp.o): In function `__kmp_expand_file_name':
-kmp_utility.cpp:(.text+0x5b0): undefined reference to `gethostname'
-/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_create_cpuinfo_map(AddrUnsPair**, int*, kmp_i18n_id*, _IO_FILE*)':
-kmp_affinity.cpp:(.text+0xb376): undefined reference to `fgetc'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_terminate_thread':
-z_Linux_util.cpp:(.text+0x5b0): undefined reference to `pthread_cancel'
-z_Linux_util.cpp:(.text+0x5f4): undefined reference to `sched_yield'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_yield':
-z_Linux_util.cpp:(.text+0x671): undefined reference to `sched_yield'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_create_worker':
-z_Linux_util.cpp:(.text+0x6d3): undefined reference to `pthread_attr_init'
-z_Linux_util.cpp:(.text+0x6ec): undefined reference to `pthread_attr_setdetachstate'
-z_Linux_util.cpp:(.text+0x718): undefined reference to `pthread_attr_setstacksize'
-z_Linux_util.cpp:(.text+0x752): undefined reference to `pthread_attr_setstacksize'
-z_Linux_util.cpp:(.text+0x779): undefined reference to `pthread_create'
-z_Linux_util.cpp:(.text+0x7a2): undefined reference to `pthread_attr_destroy'
-z_Linux_util.cpp:(.text+0x838): undefined reference to `pthread_self'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_set_stack_info(int, kmp_info*)':
-z_Linux_util.cpp:(.text+0xcf8): undefined reference to `pthread_attr_init'
-z_Linux_util.cpp:(.text+0xd07): undefined reference to `pthread_self'
-z_Linux_util.cpp:(.text+0xd17): undefined reference to `pthread_getattr_np'
-z_Linux_util.cpp:(.text+0xd38): undefined reference to `pthread_attr_getstack'
-z_Linux_util.cpp:(.text+0xd4f): undefined reference to `pthread_attr_destroy'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_launch_worker(void*)':
-z_Linux_util.cpp:(.text+0xfc9): undefined reference to `pthread_setspecific'
-z_Linux_util.cpp:(.text+0xff6): undefined reference to `pthread_setcanceltype'
-z_Linux_util.cpp:(.text+0x1009): undefined reference to `pthread_setcancelstate'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_exit_thread':
-z_Linux_util.cpp:(.text+0x11e5): undefined reference to `pthread_exit'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_reap_worker':
-z_Linux_util.cpp:(.text+0x11f9): undefined reference to `pthread_join'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_install_signals':
-z_Linux_util.cpp:(.text+0x1222): undefined reference to `sigemptyset'
-z_Linux_util.cpp:(.text+0x124a): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1264): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1295): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x12b3): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x12cc): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x12e5): undefined reference to `sigaction'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o):z_Linux_util.cpp:(.text+0x12fe): more undefined references to `sigaction' follow
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_install_signals':
-z_Linux_util.cpp:(.text+0x1435): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x1459): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1473): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x14a0): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x14b8): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x14dc): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x14f6): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1523): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x153b): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x155f): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1579): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x15a6): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x15be): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x15e2): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x15fc): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1629): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1641): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x1665): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x167f): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x16ac): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x16c4): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x16e8): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1702): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x172f): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1747): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x176b): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1785): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x17b2): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x17ca): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x17ee): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x1808): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1835): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x184d): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x1871): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x188b): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x18b8): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x18d0): undefined reference to `sigaddset'
-z_Linux_util.cpp:(.text+0x18f4): undefined reference to `sigfillset'
-z_Linux_util.cpp:(.text+0x190e): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1937): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1953): undefined reference to `sigaddset'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_remove_signals':
-z_Linux_util.cpp:(.text+0x1a58): undefined reference to `sigismember'
-z_Linux_util.cpp:(.text+0x1a69): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1a88): undefined reference to `sigaction'
-z_Linux_util.cpp:(.text+0x1a98): undefined reference to `sigdelset'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_enable':
-z_Linux_util.cpp:(.text+0x1b4e): undefined reference to `pthread_setcancelstate'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_disable':
-z_Linux_util.cpp:(.text+0x1be4): undefined reference to `pthread_setcancelstate'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_register_atfork':
-z_Linux_util.cpp:(.text+0x1c91): undefined reference to `pthread_atfork'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_initialize':
-z_Linux_util.cpp:(.text+0x1e8e): undefined reference to `pthread_mutexattr_init'
-z_Linux_util.cpp:(.text+0x1e9e): undefined reference to `pthread_condattr_init'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_initialize_thread':
-z_Linux_util.cpp:(.text+0x1fe2): undefined reference to `pthread_cond_init'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_uninitialize_thread':
-z_Linux_util.cpp:(.text+0x2152): undefined reference to `pthread_cond_destroy'
-z_Linux_util.cpp:(.text+0x2168): undefined reference to `pthread_mutex_destroy'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_try_suspend_mx':
-z_Linux_util.cpp:(.text+0x2279): undefined reference to `pthread_mutex_trylock'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_32':
-z_Linux_util.cpp:(.text+0x24a5): undefined reference to `pthread_cond_wait'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_64':
-z_Linux_util.cpp:(.text+0x26a5): undefined reference to `pthread_cond_wait'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_suspend_oncore':
-z_Linux_util.cpp:(.text+0x28a5): undefined reference to `pthread_cond_wait'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_32':
-z_Linux_util.cpp:(.text+0x2a25): undefined reference to `pthread_cond_signal'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_64':
-z_Linux_util.cpp:(.text+0x2b78): undefined reference to `pthread_cond_signal'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_resume_oncore':
-z_Linux_util.cpp:(.text+0x2cc8): undefined reference to `pthread_cond_signal'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_gtid_set_specific':
-z_Linux_util.cpp:(.text+0x2db0): undefined reference to `pthread_setspecific'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_gtid_get_specific':
-z_Linux_util.cpp:(.text+0x2e41): undefined reference to `pthread_getspecific'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_cpu_time':
-z_Linux_util.cpp:(.text+0x2e6a): undefined reference to `times'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_system_info':
-z_Linux_util.cpp:(.text+0x2eb8): undefined reference to `getrusage'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_system_time':
-z_Linux_util.cpp:(.text+0x2f93): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_clear_system_time':
-z_Linux_util.cpp:(.text+0x3080): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_read_from_file':
-z_Linux_util.cpp:(.text+0x31ce): undefined reference to `vfscanf'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_runtime_initialize':
-z_Linux_util.cpp:(.text+0x321f): undefined reference to `sysconf'
-z_Linux_util.cpp:(.text+0x3241): undefined reference to `getrlimit'
-z_Linux_util.cpp:(.text+0x3268): undefined reference to `sysconf'
-z_Linux_util.cpp:(.text+0x3277): undefined reference to `sysconf'
-z_Linux_util.cpp:(.text+0x3292): undefined reference to `sysconf'
-z_Linux_util.cpp:(.text+0x32bf): undefined reference to `pthread_key_create'
-z_Linux_util.cpp:(.text+0x32cf): undefined reference to `pthread_mutexattr_init'
-z_Linux_util.cpp:(.text+0x32fc): undefined reference to `pthread_condattr_init'
-z_Linux_util.cpp:(.text+0x3315): undefined reference to `pthread_cond_init'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_runtime_destroy':
-z_Linux_util.cpp:(.text+0x35b8): undefined reference to `pthread_key_delete'
-z_Linux_util.cpp:(.text+0x35c8): undefined reference to `pthread_mutex_destroy'
-z_Linux_util.cpp:(.text+0x35e0): undefined reference to `pthread_cond_destroy'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_thread_sleep':
-z_Linux_util.cpp:(.text+0x378e): undefined reference to `sleep'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_elapsed':
-z_Linux_util.cpp:(.text+0x37b3): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_now_nsec()':
-z_Linux_util.cpp:(.text+0x387c): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_initialize_system_tick':
-z_Linux_util.cpp:(.text+0x38b3): undefined reference to `gettimeofday'
-z_Linux_util.cpp:(.text+0x38e3): undefined reference to `gettimeofday'
-/home/446/openmp/lib/libomp.a(z_Linux_util.cpp.o): In function `__kmp_get_load_balance':
-z_Linux_util.cpp:(.text+0x3b43): undefined reference to `gettimeofday'
-z_Linux_util.cpp:(.text+0x3bcd): undefined reference to `opendir'
-z_Linux_util.cpp:(.text+0x3c03): undefined reference to `readdir'
-z_Linux_util.cpp:(.text+0x3c83): undefined reference to `opendir'
-z_Linux_util.cpp:(.text+0x3cda): undefined reference to `close'
-z_Linux_util.cpp:(.text+0x3ce4): undefined reference to `readdir'
-z_Linux_util.cpp:(.text+0x3d4f): undefined reference to `open'
-z_Linux_util.cpp:(.text+0x3dc4): undefined reference to `closedir'
-z_Linux_util.cpp:(.text+0x3df4): undefined reference to `readdir'
-z_Linux_util.cpp:(.text+0x3e61): undefined reference to `closedir'
-z_Linux_util.cpp:(.text+0x3e7b): undefined reference to `closedir'
-z_Linux_util.cpp:(.text+0x3e96): undefined reference to `close'
-/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_thread_num':
-kmp_ftn_cdecl.cpp:(.text+0x85f): undefined reference to `pthread_getspecific'
-/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_num_devices':
-kmp_ftn_cdecl.cpp:(.text+0x1059): undefined reference to `dlsym'
-kmp_ftn_cdecl.cpp:(.text+0x106f): undefined reference to `dlsym'
-/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_get_initial_device':
-kmp_ftn_cdecl.cpp:(.text+0x109e): undefined reference to `dlsym'
-/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_pause_resource':
-kmp_ftn_cdecl.cpp:(.text+0x16c1): undefined reference to `dlsym'
-/home/446/openmp/lib/libomp.a(kmp_ftn_cdecl.cpp.o): In function `omp_pause_resource_all':
-kmp_ftn_cdecl.cpp:(.text+0x16ff): undefined reference to `dlsym'
-/home/446/openmp/lib/libomp.a(ompt-general.cpp.o):ompt-general.cpp:(.text+0xb75): more undefined references to `dlsym' follow
+kmp_utility.cpp:(.text+0x5e3): undefined reference to `__snprintf_chk'
+kmp_utility.cpp:(.text+0x655): undefined reference to `__snprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o): In function `__kmp_affinity_print_mask':
+kmp_affinity.cpp:(.text+0x172b): undefined reference to `__snprintf_chk'
+kmp_affinity.cpp:(.text+0x181e): undefined reference to `__snprintf_chk'
+kmp_affinity.cpp:(.text+0x186a): undefined reference to `__snprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_affinity.cpp.o):kmp_affinity.cpp:(.text+0x18ca): more undefined references to `__snprintf_chk' follow
 /home/446/openmp/lib/libomp.a(ompt-general.cpp.o): In function `ompt_pre_init':
-ompt-general.cpp:(.text+0xc89): undefined reference to `dlopen'
-ompt-general.cpp:(.text+0xc9b): undefined reference to `dlsym'
-ompt-general.cpp:(.text+0xce9): undefined reference to `dlopen'
-ompt-general.cpp:(.text+0xcfb): undefined reference to `dlsym'
-ompt-general.cpp:(.text+0xd23): undefined reference to `stderr'
-/home/446/openmp/lib/libomp.a(ompt-general.cpp.o): In function `ompt_get_proc_id()':
-ompt-general.cpp:(.text+0x20b9): undefined reference to `sched_getcpu'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul':
-kmp_atomic.cpp:(.text+0x1915): undefined reference to `__mulsc3'
-kmp_atomic.cpp:(.text+0x1938): undefined reference to `__mulsc3'
-kmp_atomic.cpp:(.text+0x1959): undefined reference to `__mulsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div':
-kmp_atomic.cpp:(.text+0x1a11): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x1ab4): undefined reference to `__divsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_mul':
-kmp_atomic.cpp:(.text+0x1fe0): undefined reference to `__muldc3'
-kmp_atomic.cpp:(.text+0x1ff2): undefined reference to `__muldc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div':
-kmp_atomic.cpp:(.text+0x2095): undefined reference to `__divdc3'
-kmp_atomic.cpp:(.text+0x213e): undefined reference to `__divdc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_mul':
-kmp_atomic.cpp:(.text+0x2516): undefined reference to `__mulxc3'
-kmp_atomic.cpp:(.text+0x25d2): undefined reference to `__mulxc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div':
-kmp_atomic.cpp:(.text+0x275a): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x2806): undefined reference to `__divxc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_rev':
-kmp_atomic.cpp:(.text+0x32dc): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x3388): undefined reference to `__divsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_rev':
-kmp_atomic.cpp:(.text+0x35f5): undefined reference to `__divdc3'
-kmp_atomic.cpp:(.text+0x369e): undefined reference to `__divdc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_rev':
-kmp_atomic.cpp:(.text+0x38e6): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x398e): undefined reference to `__divxc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul_cmplx8':
-kmp_atomic.cpp:(.text+0x3ebb): undefined reference to `__muldc3'
-kmp_atomic.cpp:(.text+0x3f73): undefined reference to `__muldc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cmplx8':
-kmp_atomic.cpp:(.text+0x401e): undefined reference to `__divdc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_mul_cpt':
-kmp_atomic.cpp:(.text+0x6e19): undefined reference to `__mulsc3'
-kmp_atomic.cpp:(.text+0x6e2d): undefined reference to `__mulsc3'
-kmp_atomic.cpp:(.text+0x6e41): undefined reference to `__mulsc3'
-kmp_atomic.cpp:(.text+0x6e55): undefined reference to `__mulsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cpt':
-kmp_atomic.cpp:(.text+0x6f0f): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x6fa0): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x6fdf): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x7038): undefined reference to `__divsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_mul_cpt':
-kmp_atomic.cpp:(.text+0x7536): undefined reference to `__muldc3'
-kmp_atomic.cpp:(.text+0x7603): undefined reference to `__muldc3'
-kmp_atomic.cpp:(.text+0x76c5): undefined reference to `__muldc3'
-kmp_atomic.cpp:(.text+0x76fa): undefined reference to `__muldc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_cpt':
-kmp_atomic.cpp:(.text+0x77c6): undefined reference to `__divdc3'
-kmp_atomic.cpp:(.text+0x7882): undefined reference to `__divdc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_mul_cpt':
-kmp_atomic.cpp:(.text+0x7d63): undefined reference to `__mulxc3'
-kmp_atomic.cpp:(.text+0x7e1a): undefined reference to `__mulxc3'
-kmp_atomic.cpp:(.text+0x7e7b): undefined reference to `__mulxc3'
-kmp_atomic.cpp:(.text+0x7ee4): undefined reference to `__mulxc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_cpt':
-kmp_atomic.cpp:(.text+0x809b): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x812a): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x8169): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x81c0): undefined reference to `__divxc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx4_div_cpt_rev':
-kmp_atomic.cpp:(.text+0x8eaf): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x8f40): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x8f7f): undefined reference to `__divsc3'
-kmp_atomic.cpp:(.text+0x8fd8): undefined reference to `__divsc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx8_div_cpt_rev':
-kmp_atomic.cpp:(.text+0x92a4): undefined reference to `__divdc3'
-kmp_atomic.cpp:(.text+0x935f): undefined reference to `__divdc3'
-/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx10_div_cpt_rev':
-kmp_atomic.cpp:(.text+0x9637): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x96c2): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x9705): undefined reference to `__divxc3'
-kmp_atomic.cpp:(.text+0x9760): undefined reference to `__divxc3'
-/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_set':
-kmp_environment.cpp:(.text+0xec): undefined reference to `setenv'
-/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_unset':
-kmp_environment.cpp:(.text+0x171): undefined reference to `unsetenv'
-/home/446/openmp/lib/libomp.a(kmp_environment.cpp.o): In function `__kmp_env_blk_init':
-kmp_environment.cpp:(.text+0x200): undefined reference to `environ'
+ompt-general.cpp:(.text+0x24f1): undefined reference to `stderr'
+ompt-general.cpp:(.text+0x2505): undefined reference to `__fprintf_chk'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_max':
+kmp_atomic.cpp:(.text+0xd28): undefined reference to `__lttf2'
+kmp_atomic.cpp:(.text+0xd58): undefined reference to `__lttf2'
+kmp_atomic.cpp:(.text+0xd98): undefined reference to `__lttf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_min':
+kmp_atomic.cpp:(.text+0xdf8): undefined reference to `__gttf2'
+kmp_atomic.cpp:(.text+0xe28): undefined reference to `__gttf2'
+kmp_atomic.cpp:(.text+0xe68): undefined reference to `__gttf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_add':
+kmp_atomic.cpp:(.text+0x1337): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x139b): undefined reference to `__addtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_sub':
+kmp_atomic.cpp:(.text+0x1427): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x148b): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_mul':
+kmp_atomic.cpp:(.text+0x1517): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x157b): undefined reference to `__multf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_div':
+kmp_atomic.cpp:(.text+0x1607): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x166b): undefined reference to `__divtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_add':
+kmp_atomic.cpp:(.text+0x2599): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x25ac): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x2615): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x2628): undefined reference to `__addtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_sub':
+kmp_atomic.cpp:(.text+0x26d9): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x26ec): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x2755): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x2768): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_mul':
+kmp_atomic.cpp:(.text+0x283a): undefined reference to `__multc3'
+kmp_atomic.cpp:(.text+0x28cf): undefined reference to `__multc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_div':
+kmp_atomic.cpp:(.text+0x29da): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0x2a6f): undefined reference to `__divtc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_sub_rev':
+kmp_atomic.cpp:(.text+0x32f3): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x3353): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_div_rev':
+kmp_atomic.cpp:(.text+0x33d3): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x3433): undefined reference to `__divtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_sub_rev':
+kmp_atomic.cpp:(.text+0x3b59): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x3b6c): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x3bd5): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x3be8): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_div_rev':
+kmp_atomic.cpp:(.text+0x3cba): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0x3d4f): undefined reference to `__divtc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_add_fp':
+kmp_atomic.cpp:(.text+0x40e4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x40ee): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x40f3): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_add_fp':
+kmp_atomic.cpp:(.text+0x4124): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x412e): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4133): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_sub_fp':
+kmp_atomic.cpp:(.text+0x4164): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x416e): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4173): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_sub_fp':
+kmp_atomic.cpp:(.text+0x41a4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x41ae): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x41b3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_mul_fp':
+kmp_atomic.cpp:(.text+0x41e4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x41ee): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x41f3): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_mul_fp':
+kmp_atomic.cpp:(.text+0x4224): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x422e): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4233): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_div_fp':
+kmp_atomic.cpp:(.text+0x4264): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x426e): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4273): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_div_fp':
+kmp_atomic.cpp:(.text+0x42a4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x42ae): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x42b3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_add_fp':
+kmp_atomic.cpp:(.text+0x42e4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x42ee): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x42f3): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_add_fp':
+kmp_atomic.cpp:(.text+0x4324): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x432e): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4333): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_sub_fp':
+kmp_atomic.cpp:(.text+0x4364): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x436e): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4373): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_sub_fp':
+kmp_atomic.cpp:(.text+0x43a4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x43ae): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x43b3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_mul_fp':
+kmp_atomic.cpp:(.text+0x43e4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x43ee): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x43f3): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_mul_fp':
+kmp_atomic.cpp:(.text+0x4424): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x442e): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4433): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_div_fp':
+kmp_atomic.cpp:(.text+0x4464): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x446e): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4473): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_div_fp':
+kmp_atomic.cpp:(.text+0x44a4): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x44ae): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x44b3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_add_fp':
+kmp_atomic.cpp:(.text+0x44e3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x44ed): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x44f2): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_add_fp':
+kmp_atomic.cpp:(.text+0x4523): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x452d): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4532): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_sub_fp':
+kmp_atomic.cpp:(.text+0x4563): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x456d): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4572): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_sub_fp':
+kmp_atomic.cpp:(.text+0x45a3): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x45ad): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x45b2): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_mul_fp':
+kmp_atomic.cpp:(.text+0x45e3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x45ed): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x45f2): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_mul_fp':
+kmp_atomic.cpp:(.text+0x4623): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x462d): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4632): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_div_fp':
+kmp_atomic.cpp:(.text+0x4663): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x466d): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4672): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_div_fp':
+kmp_atomic.cpp:(.text+0x46a3): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x46ad): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x46b2): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_add_fp':
+kmp_atomic.cpp:(.text+0x46e5): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x46ef): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x46f4): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_add_fp':
+kmp_atomic.cpp:(.text+0x4735): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x473f): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4744): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_sub_fp':
+kmp_atomic.cpp:(.text+0x4785): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x478f): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4794): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_sub_fp':
+kmp_atomic.cpp:(.text+0x47d5): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x47df): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x47e4): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_mul_fp':
+kmp_atomic.cpp:(.text+0x4825): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x482f): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4834): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_mul_fp':
+kmp_atomic.cpp:(.text+0x4875): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x487f): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4884): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_div_fp':
+kmp_atomic.cpp:(.text+0x48c5): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x48cf): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x48d4): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_div_fp':
+kmp_atomic.cpp:(.text+0x4915): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x491f): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4924): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_add_fp':
+kmp_atomic.cpp:(.text+0x496b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x4975): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x497a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_sub_fp':
+kmp_atomic.cpp:(.text+0x49bb): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x49c5): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x49ca): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_mul_fp':
+kmp_atomic.cpp:(.text+0x4a0b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x4a15): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4a1a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_div_fp':
+kmp_atomic.cpp:(.text+0x4a5b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x4a65): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4a6a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_add_fp':
+kmp_atomic.cpp:(.text+0x4aad): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x4ab7): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4abc): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_sub_fp':
+kmp_atomic.cpp:(.text+0x4afd): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x4b07): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4b0c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_mul_fp':
+kmp_atomic.cpp:(.text+0x4b4d): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x4b57): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4b5c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_div_fp':
+kmp_atomic.cpp:(.text+0x4b9d): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x4ba7): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4bac): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_add_fp':
+kmp_atomic.cpp:(.text+0x4c03): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4c0f): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4c14): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x4c6f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4c7b): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x4c80): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_sub_fp':
+kmp_atomic.cpp:(.text+0x4d03): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4d0f): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4d14): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x4d6f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4d7b): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x4d80): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_mul_fp':
+kmp_atomic.cpp:(.text+0x4e03): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4e0f): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4e14): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x4e6f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4e7b): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x4e80): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_div_fp':
+kmp_atomic.cpp:(.text+0x4f03): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4f0f): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4f14): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x4f6f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x4f7b): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x4f80): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x4fed): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x4ffb): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5000): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x503d): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x504b): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5050): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_div_rev_fp':
+kmp_atomic.cpp:(.text+0x508d): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x509b): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x50a0): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_div_rev_fp':
+kmp_atomic.cpp:(.text+0x50dd): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x50eb): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x50f0): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x512e): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x513c): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5141): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x517e): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x518c): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5191): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_div_rev_fp':
+kmp_atomic.cpp:(.text+0x51ce): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x51dc): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x51e1): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_div_rev_fp':
+kmp_atomic.cpp:(.text+0x521e): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x522c): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x5231): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x526b): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x5279): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x527e): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x52bb): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x52c9): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x52ce): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_div_rev_fp':
+kmp_atomic.cpp:(.text+0x530b): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x5319): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x531e): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_div_rev_fp':
+kmp_atomic.cpp:(.text+0x535b): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x5369): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x536e): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x53af): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x53bd): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x53c2): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x53ff): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x540d): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5412): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_div_rev_fp':
+kmp_atomic.cpp:(.text+0x544f): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x545d): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x5462): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_div_rev_fp':
+kmp_atomic.cpp:(.text+0x549f): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x54ad): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x54b2): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x54f7): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x5505): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x550a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_div_rev_fp':
+kmp_atomic.cpp:(.text+0x5557): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x5565): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x556a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x55b9): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x55c7): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x55cc): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_div_rev_fp':
+kmp_atomic.cpp:(.text+0x5619): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x5627): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x562c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_sub_rev_fp':
+kmp_atomic.cpp:(.text+0x567f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x568f): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5694): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x56eb): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x56fb): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x5700): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_div_rev_fp':
+kmp_atomic.cpp:(.text+0x577f): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x578f): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x5794): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x57eb): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x57fb): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x5800): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7432): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x743c): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7441): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7492): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x749c): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x74a1): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x74f2): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x74fc): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7501): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7552): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x755c): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7561): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x75b2): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x75bc): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x75c1): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7612): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x761c): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7621): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7672): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x767c): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7681): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x76d2): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x76dc): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x76e1): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7733): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x773d): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7742): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7793): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x779d): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x77a2): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x77f3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x77fd): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7802): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7853): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x785d): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7862): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x78b3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x78bd): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x78c2): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7913): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x791d): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7922): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7973): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x797d): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7982): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x79d3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x79dd): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x79e2): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7a30): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x7a3a): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7a3f): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7a90): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x7a9a): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7a9f): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7af0): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x7afa): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7aff): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7b50): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x7b5a): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7b5f): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7bb0): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x7bba): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7bbf): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7c10): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x7c1a): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7c1f): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7c70): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0x7c7a): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7c7f): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7cd0): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0x7cda): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7cdf): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7d34): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x7d3e): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7d43): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x7d94): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x7d9e): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x7da3): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7df4): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x7dfe): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7e03): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x7e54): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x7e5e): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x7e63): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7eb4): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x7ebe): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7ec3): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x7f14): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x7f1e): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x7f23): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7f74): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0x7f7e): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7f83): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x7fd4): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0x7fde): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x7fe3): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x803b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x8045): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x804a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x80ab): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x80b5): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x80ba): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x811b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x8125): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x812a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x818b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0x8195): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x819a): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x81fd): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x8207): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x820c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x826d): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x8277): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x827c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x82dd): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x82e7): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x82ec): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x834d): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0x8357): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x835c): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_add_cpt_fp':
+kmp_atomic.cpp:(.text+0x83d8): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x83e6): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x83eb): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8437): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8446): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x844b): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8478): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8485): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x848a): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x84e9): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x84f6): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x84fb): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_sub_cpt_fp':
+kmp_atomic.cpp:(.text+0x8578): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8586): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x858b): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x85d7): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x85e6): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x85eb): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8618): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8625): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x862a): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8689): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8696): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x869b): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_mul_cpt_fp':
+kmp_atomic.cpp:(.text+0x8718): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8726): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x872b): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8777): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8786): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x878b): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x87b8): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x87c5): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x87ca): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8829): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8836): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x883b): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_div_cpt_fp':
+kmp_atomic.cpp:(.text+0x88b8): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x88c6): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x88cb): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8917): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8926): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x892b): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x8958): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x8965): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x896a): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0x89c9): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0x89d6): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x89db): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_max_cpt':
+kmp_atomic.cpp:(.text+0x8ff6): undefined reference to `__lttf2'
+kmp_atomic.cpp:(.text+0x9027): undefined reference to `__lttf2'
+kmp_atomic.cpp:(.text+0x907d): undefined reference to `__lttf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_min_cpt':
+kmp_atomic.cpp:(.text+0x90f6): undefined reference to `__gttf2'
+kmp_atomic.cpp:(.text+0x9127): undefined reference to `__gttf2'
+kmp_atomic.cpp:(.text+0x917d): undefined reference to `__gttf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_add_cpt':
+kmp_atomic.cpp:(.text+0x9889): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x98d6): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x9900): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0x9962): undefined reference to `__addtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_sub_cpt':
+kmp_atomic.cpp:(.text+0x99dd): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x9a2e): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x9a60): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0x9abe): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_mul_cpt':
+kmp_atomic.cpp:(.text+0x9b29): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x9b76): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x9ba0): undefined reference to `__multf3'
+kmp_atomic.cpp:(.text+0x9c02): undefined reference to `__multf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_div_cpt':
+kmp_atomic.cpp:(.text+0x9c7d): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x9cce): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x9d00): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0x9d5e): undefined reference to `__divtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_add_cpt':
+kmp_atomic.cpp:(.text+0xb366): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0xb37f): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0xb3cb): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0xb3df): undefined reference to `__addtf3'
+kmp_atomic.cpp:(.text+0xb416): undefined reference to `__addtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o):kmp_atomic.cpp:(.text+0xb42a): more undefined references to `__addtf3' follow
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_sub_cpt':
+kmp_atomic.cpp:(.text+0xb536): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xb54f): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xb59b): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xb5af): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xb5e6): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o):kmp_atomic.cpp:(.text+0xb5fa): more undefined references to `__subtf3' follow
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_mul_cpt':
+kmp_atomic.cpp:(.text+0xb72f): undefined reference to `__multc3'
+kmp_atomic.cpp:(.text+0xb7a9): undefined reference to `__multc3'
+kmp_atomic.cpp:(.text+0xb7fc): undefined reference to `__multc3'
+kmp_atomic.cpp:(.text+0xb872): undefined reference to `__multc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_div_cpt':
+kmp_atomic.cpp:(.text+0xb93f): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xb9e1): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xba34): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xbaa2): undefined reference to `__divtc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_sub_cpt_rev':
+kmp_atomic.cpp:(.text+0xc459): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xc4a6): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xc4d0): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xc52e): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float16_div_cpt_rev':
+kmp_atomic.cpp:(.text+0xc599): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xc5e6): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xc610): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xc66e): undefined reference to `__divtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_sub_cpt_rev':
+kmp_atomic.cpp:(.text+0xd18a): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd1a3): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd213): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd227): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd25e): undefined reference to `__subtf3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o):kmp_atomic.cpp:(.text+0xd272): more undefined references to `__subtf3' follow
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_cmplx16_div_cpt_rev':
+kmp_atomic.cpp:(.text+0xd39f): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xd441): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xd494): undefined reference to `__divtc3'
+kmp_atomic.cpp:(.text+0xd502): undefined reference to `__divtc3'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd572): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd580): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd585): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd5d2): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd5e0): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd5e5): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd632): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd640): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd645): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed1u_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd692): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd6a0): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd6a5): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd6f3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd701): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd706): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd753): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd761): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd766): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd7b3): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd7c1): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd7c6): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed2u_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd813): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd821): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd826): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd870): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd87e): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd883): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd8d0): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0xd8de): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xd8e3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd930): undefined reference to `__floatsitf'
+kmp_atomic.cpp:(.text+0xd93e): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd943): undefined reference to `__fixtfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed4u_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd990): undefined reference to `__floatunsitf'
+kmp_atomic.cpp:(.text+0xd99e): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xd9a3): undefined reference to `__fixunstfsi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xd9f4): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0xda02): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xda07): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xda54): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0xda62): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xda67): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdab4): undefined reference to `__floatditf'
+kmp_atomic.cpp:(.text+0xdac2): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdac7): undefined reference to `__fixtfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_fixed8u_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdb14): undefined reference to `__floatunditf'
+kmp_atomic.cpp:(.text+0xdb22): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdb27): undefined reference to `__fixunstfdi'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdb7b): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0xdb89): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xdb8e): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float4_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdbeb): undefined reference to `__extendsftf2'
+kmp_atomic.cpp:(.text+0xdbf9): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdbfe): undefined reference to `__trunctfsf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdc5d): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0xdc6b): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xdc70): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float8_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdcdd): undefined reference to `__extenddftf2'
+kmp_atomic.cpp:(.text+0xdceb): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdcf0): undefined reference to `__trunctfdf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_sub_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdd78): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xdd8a): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xdd8f): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xddd7): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xddea): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xddef): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xde18): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xde29): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xde2e): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xde91): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xdea2): undefined reference to `__subtf3'
+kmp_atomic.cpp:(.text+0xdea7): undefined reference to `__trunctfxf2'
+/home/446/openmp/lib/libomp.a(kmp_atomic.cpp.o): In function `__kmpc_atomic_float10_div_cpt_rev_fp':
+kmp_atomic.cpp:(.text+0xdf18): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xdf2a): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdf2f): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xdf77): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xdf8a): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdf8f): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xdfb8): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xdfc9): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xdfce): undefined reference to `__trunctfxf2'
+kmp_atomic.cpp:(.text+0xe031): undefined reference to `__extendxftf2'
+kmp_atomic.cpp:(.text+0xe042): undefined reference to `__divtf3'
+kmp_atomic.cpp:(.text+0xe047): undefined reference to `__trunctfxf2'
 make: *** [nautilus.bin] Error 1
