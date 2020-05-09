@@ -1,0 +1,1 @@
+/home/446/openmp/lib/libnk_openmp.a

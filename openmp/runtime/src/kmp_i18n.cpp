@@ -27,7 +27,7 @@
 #include "kmp_environment.h"
 #include "kmp_i18n_default.inc"
 #include "kmp_str.h"
-
+#include "nk_header.h"
 #undef KMP_I18N_OK
 
 #define get_section(id) ((id) >> 16)

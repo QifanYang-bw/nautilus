@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/nk_header.h
+nl_types.h
+../include/nl_types.h
+
+../include/nl_types.h
+
+/home/mjc/nautilus/nk_function/src/nk_source.c
+nk_header.h
+/home/mjc/nautilus/nk_function/src/nk_header.h
+

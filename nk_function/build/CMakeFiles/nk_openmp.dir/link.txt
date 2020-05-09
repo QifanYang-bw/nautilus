@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnk_openmp.a  CMakeFiles/nk_openmp.dir/src/nk_source.c.o
+/usr/bin/ranlib libnk_openmp.a

@@ -1,0 +1,7 @@
+/home/mjc/nautilus/nk_function/build/CMakeFiles/install/strip.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/edit_cache.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/nk_openmp.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/rebuild_cache.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/list_install_components.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/install/local.dir
+/home/mjc/nautilus/nk_function/build/CMakeFiles/install.dir
