@@ -25,7 +25,7 @@
 #define _NK_OPENMP_
 
 #ifdef NAUT_CONFIG_OPENMP_RT_OMP
-#include <rt/openmp/omp/omp.h>
+#include <rt/openmp/omp/nkkmp.h>
 #endif
 
 #ifdef NAUT_CONFIG_OPENMP_RT_GOMP
