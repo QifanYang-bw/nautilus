@@ -1,6 +1,5 @@
 #include <nautilus/nautilus.h>
 #include <nautilus/shell.h>
-#include "libomp.h"
 #ifndef NAUT_CONFIG_DEBUG_GPUDEV
 #undef DEBUG_PRINT
 #define DEBUG_PRINT(fmt, args...) 
@@ -13,13 +12,11 @@
 
 static int handle_gputest (char * buf, void * priv)
 {
-    char name[32], rw[16];
-    struct nk_gpu_dev *d;
-    struct nk_gpu_dev_characteristics c;
-
-    #pragma parallel
+    int i;
+    #pragma omp parallel num_threads(5)
     {
-    for(int i=0;i<5;i++){
+    #pragma omp for private(i) 
+    for( i=0;i<5;i++){
       nk_vc_printf("%d",i);
     }
 
