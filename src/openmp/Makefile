@@ -1,3 +1,2 @@
-obj-y += nk_source.o \
-	catgets.o
+obj-y += omptest.o
 
