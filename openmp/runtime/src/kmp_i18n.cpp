@@ -848,10 +848,13 @@ void __kmp_msg(kmp_msg_severity_t severity, kmp_msg_t message, va_list args) {
   // to hang on OS X*.
 
 } // __kmp_msg
-
+#include <stdio.h>
+#include <stdarg.h>
 void __kmp_msg(kmp_msg_severity_t severity, kmp_msg_t message, ...) {
   va_list args;
   va_start(args, message);
+  //mjc
+  vfprintf(NULL,message.str,args);
   __kmp_msg(severity, message, args);
   va_end(args);
 }
