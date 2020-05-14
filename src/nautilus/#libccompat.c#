@@ -1058,10 +1058,10 @@ int getrlimit(int resource, struct rlimit *rlim){
   return 0;
 }
 
-void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)){
-  //empty
+/* void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)){ */
+/*   //empty */
 
-}
+/* } */
 
 
 // Other stuff KMP needs, for a start

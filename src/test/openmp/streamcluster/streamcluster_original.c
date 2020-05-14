@@ -44,6 +44,7 @@
 #define DEBUG(fmt, args...) DEBUG_PRINT("scorg: " fmt, ##args)
 #else
 #define DEBUG(fmt, args...)
+
 #endif
 
 #define printf(fmt, args...) nk_vc_printf(fmt, ##args);
@@ -59,6 +60,13 @@
 typedef int bool;
 #define pthread_barrier_t nk_counting_barrier_t
 
+
+//mjc
+#define pthread_key_create(k,d) nk_tls_key_create(k,d)
+#define pthread_mutex_init(m,a) spinlock_init(m)
+#define pthread_cond_init(c,a) 0
+#define pthread_condattr_init(a) 0
+#define pthread_mutexattr_init(a) 0
 
 #define pthread_barrier_init(p,n,c) nk_counting_barrier_init(p,c)
 #define pthread_barrier_wait(p) do { if (!skipbarrier) { DEBUG("barrier start %s:%d\n",__FILE__,__LINE__); nk_counting_barrier(p); DEBUG("barrier end %s:%d\n",__FILE__,__LINE__);} } while (0)

@@ -43,7 +43,17 @@ int            nk_env_destroy(struct nk_env *env);
 #define NK_ENV_GLOBAL_MAX_VAL_SIZE    256
 
 // the global environment is constructed on first use
-extern struct nk_env *nk_env_global;
+struct nk_env {
+    spinlock_t lock;
+    char       name[NK_ENV_MAX_NAME];
+    struct list_head node;
+    uint64_t num_keys;
+    uint64_t key_size;
+    uint64_t val_size;
+    char     data[0];
+};
+
+//extern struct nk_env *nk_env_global;
 
 int   nk_env_search(struct nk_env *env, char *key, char **value);
 int   nk_env_insert(struct nk_env *env, char *key, char *val);

@@ -49,15 +49,15 @@
 
 // the algorithm is stupid and can be fixed later if this
 // is ever a performance issue
-struct nk_env {
-    spinlock_t lock;
-    char       name[NK_ENV_MAX_NAME];
-    struct list_head node;
-    uint64_t num_keys;
-    uint64_t key_size;
-    uint64_t val_size;
-    char     data[0];
-};
+/* struct nk_env { */
+/*     spinlock_t lock; */
+/*     char       name[NK_ENV_MAX_NAME]; */
+/*     struct list_head node; */
+/*     uint64_t num_keys; */
+/*     uint64_t key_size; */
+/*     uint64_t val_size; */
+/*     char     data[0]; */
+/* }; */
 
 static spinlock_t state_lock;
 static struct list_head env_list = LIST_HEAD_INIT(env_list);

@@ -107,7 +107,7 @@ thread_detach (nk_thread_t * t)
 
 
 
-static void
+static void 
 tls_exit (void) 
 {
     nk_thread_t * t = get_cur_thread();
