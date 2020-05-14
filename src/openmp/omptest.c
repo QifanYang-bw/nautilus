@@ -1,5 +1,6 @@
 #include <nautilus/nautilus.h>
 #include <nautilus/shell.h>
+#include <nautilus/libccompat.h>
 #ifndef NAUT_CONFIG_DEBUG_GPUDEV
 #undef DEBUG_PRINT
 #define DEBUG_PRINT(fmt, args...) 
@@ -13,12 +14,15 @@
 static int handle_gputest (char * buf, void * priv)
 {
     int i;
-    #pragma omp parallel num_threads(5)
+    #pragma omp parallel
     {
-    #pragma omp for private(i) 
-    for( i=0;i<5;i++){
-      nk_vc_printf("%d",i);
-    }
+      
+      long id = getpid();
+       nk_vc_printf("omptest==thread id %d", id);	
+      //#pragma omp for private(i) 
+      /* for( i=0;i<5;i++){ */
+      /* nk_vc_printf("%d",i); */
+      /* } */
 
     }
 
