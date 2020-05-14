@@ -1027,7 +1027,7 @@ vfprintf (FILE * stream, const char * format, va_list arg)
     //char *fmt;
     //malloc()
       //fmformat
-  //DEBUG("called %s",format);
+   DEBUG("====");
    nk_vc_printf(format,arg);
    //nk_vc_printf(format,);
     return 0;
@@ -1041,8 +1041,7 @@ int sched_yield(void){
 }
 
 long sysconf(int name){
-  return -1;
-  DEBUG("sysconf, %d",name);
+  //DEBUG("sysconf, %d",name);
   long conf = __sysconf(name);
   return conf;
 }
@@ -1053,15 +1052,16 @@ struct rlimit {
        rlim_t rlim_max;  /* Hard limit (ceiling for rlim_cur) */
 };
 int getrlimit(int resource, struct rlimit *rlim){
-  rlim->rlim_cur = 0xFFFF;
-  rlim->rlim_max = 0xFFFF;
+  DEBUG("getrlimit %d\n", resource); 
+  rlim->rlim_cur = 0xF000;
+  rlim->rlim_max = 0xF000;
   return 0;
 }
 
-void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)){
-  //empty
+/* void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)){ */
+/*   //empty */
 
-}
+/* } */
 
 
 // Other stuff KMP needs, for a start

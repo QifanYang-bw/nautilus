@@ -33,14 +33,32 @@
 
 #define _SC_EQUIV_CLASS_MAX -1
 
+#define _SC_THREADS 67
+#define _SC_THREAD_THREADS_MAX 76
+#define _SC_THREAD_STACK_MIN 75
+
+
 long int
 __sysconf (int name)
 {
+
+  //DEBUG("name %d\n", name);
   switch (name)
     {
+      
       /* Also add obsolete or unnecessarily added constants here.  */
-    case _SC_EQUIV_CLASS_MAX:
-      return 0;
+    case _SC_THREADS:
+ DEBUG("_SC_THREADS %d\n", name);
+      return 0x31069;
+    case _SC_THREAD_THREADS_MAX:
+ DEBUG("_sc_thread_threads_max %d\n", name);
+      return 0x1000;
+    case _SC_THREAD_STACK_MIN:
+   DEBUG("sc_thread_stack_min %d\n", name);    
+      return 0x4000;
+    case 84:
+   DEBUG("unknown %d\n", name);    
+      return 8;
     default:
       DEBUG("name %d\n", name);
       return 0;

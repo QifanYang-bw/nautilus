@@ -20,7 +20,6 @@
 #include <nautilus/nautilus.h>
 #include <nautilus/naut_string.h>
 
-#define qsort _quicksort 
 #define __compar_d_fn_t compar_d_fn_t
 typedef int (*compar_d_fn_t) (const void *, const void *, void *);
 /* Byte-wise swap two items of size SIZE. */
