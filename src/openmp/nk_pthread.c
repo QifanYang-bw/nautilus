@@ -1,5 +1,3 @@
-
-
 #include <nautilus/nautilus.h>
 #include <nautilus/libccompat.h>
 #include <nautilus/thread.h>
@@ -56,20 +54,22 @@ int pthread_mutex_init(pthread_mutex_t * mutex,
         const pthread_mutexattr_t * mutexattr){
 
   DEBUG("pthread_mutex_init\n");
-  const struct pthread_mutexattr *imutexattr;
+  mutex = malloc(sizeof(pthread_mutex_t));
+  /* DEBUG("pthread_mutex_init\n"); */
+  /* const struct pthread_mutexattr *imutexattr; */
   
-  imutexattr = ((const struct pthread_mutexattr *) mutexattr ?: &default_mutexattr);
+  /* imutexattr = ((const struct pthread_mutexattr *) mutexattr ?: &default_mutexattr); */
 
-  /* Clear the whole variable.  */
-  memset (mutex, '\0', __SIZEOF_PTHREAD_MUTEX_T);
-  /* Copy the values from the attribute.  */
-  int mutex_kind = imutexattr->mutexkind & ~PTHREAD_MUTEXATTR_FLAG_BITS;
+  /* /\* Clear the whole variable.  *\/ */
+  /* memset (mutex, '\0', __SIZEOF_PTHREAD_MUTEX_T); */
+  /* /\* Copy the values from the attribute.  *\/ */
+  /* int mutex_kind = imutexattr->mutexkind & ~PTHREAD_MUTEXATTR_FLAG_BITS; */
 
-  mutex_kind |= PTHREAD_MUTEX_PSHARED_BIT;
-  mutex->__data.__kind = mutex_kind;
+  /* mutex_kind |= PTHREAD_MUTEX_PSHARED_BIT; */
+  /* mutex->__data.__kind = mutex_kind; */
 
-  //atomic_store_relaxed (&(mutex->__data.__kind), mutex_kind);
-  DEBUG("FIN");
+  /* //atomic_store_relaxed (&(mutex->__data.__kind), mutex_kind); */
+  /* DEBUG("FIN"); */
   return 0;
    
 }
@@ -96,3 +96,82 @@ int pthread_attr_init (pthread_attr_t *__attr){
   return 0;
 }
 
+
+int pthread_setspecific (pthread_key_t key, const void *value)
+{
+  nk_tls_set(key, value); 
+  return 0;
+}
+
+void* pthread_getspecific (pthread_key_t key)
+{
+  return  nk_tls_get(key); 
+  //return 0;
+}
+
+
+pthread_t pthread_self(void){
+    return get_cur_thread();
+}
+
+int pthread_atfork (void (*prepare) (void), void (*parent) (void),
+                  void (*child) (void))
+{
+  return 0;
+}
+
+int sigaction(){
+  return 0;
+}
+
+int sigemptyset(){
+  return 0;
+}
+
+int atexit(){
+  // nk_thread_exit();
+  return 0;
+}
+
+
+int pthread_cond_wait(void){
+  nk_yield();
+  return 0;
+}
+
+int pthread_mutex_lock(pthread_mutex_t *mutex){
+  mutex->lock_flags = spin_lock_irq_save(&mutex->spin_lock);
+  return 0;
+}
+
+//int pthread_mutex_trylock(pthread_mutex_t *mutex);
+
+int pthread_mutex_unlock(pthread_mutex_t *mutex){
+  spin_unlock_irq_restore(&mutex->spin_lock, mutex->lock_flags);
+  return 0;
+}
+
+int pthread_attr_setstacksize(){
+  return 0;
+}
+
+ int pthread_create(pthread_t *thread, const pthread_attr_t *attr,
+		    void *(*start_routine) (void *), void *arg){
+
+   nk_thread_fun_t fun;
+   uint8_t is_detached = false;
+   nk_stack_size_t stack_size = 0x4000;
+   nk_thread_id_t * tid = malloc(sizeof(nk_thread_id_t));
+   nk_thread_create(fun, NULL, NULL,false,stack_size, tid, 0);
+   *thread = tid;
+   DEBUG("pthread_create_ %d \n", tid);
+   return 0;
+ }
+
+int pthread_attr_setdetachstate(pthread_attr_t *attr, int detachstate){
+  return 0;   
+}
+
+int pthread_attr_destroy(){
+  return 0;
+}

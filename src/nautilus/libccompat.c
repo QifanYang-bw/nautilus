@@ -579,6 +579,17 @@ ioctl (int d, unsigned long request, ...)
 int 
 syscall (int number, ...)
 {
+
+  int msr = 0;
+  /* asm volatile ( "rdtsc\n\t"    // Returns the time in EDX:EAX. */
+  /*            "shl $32, %%rdx\n\t"  // Shift the upper bits left. */
+  /*            "or %%rdx, %0"        // 'Or' in the lower bits. */
+  /*            : "=a" (msr) */
+  /*            : */
+  /*            : "rdx"); */
+  /* __asm__ __volatile__("movq $0x1, %%rcx\n\t" */
+  /*  "sub %%rcx,%%fs\n\t" */
+  /*  "movq %%rdx,%%fs"); */
     UNDEF_FUN_ERR();
     return -1;
 }
@@ -864,8 +875,8 @@ GEN_DEF(__uselocale)
 GEN_DEF(__strftime_l)
 GEN_DEF(mbsnrtowcs)
 //GEN_DEF(pthread_mutex_init)
-GEN_DEF(pthread_mutex_lock)
-GEN_DEF(pthread_mutex_unlock)
+//GEN_DEF(pthread_mutex_lock)
+//GEN_DEF(pthread_mutex_unlock)
 GEN_DEF(wcscoll)
 //GEN_DEF(strcoll)
 GEN_DEF(towupper)
@@ -996,6 +1007,31 @@ char *getenv(const char *name)
     // UNDEF_FUN_ERR();
 }
 
+//#define environ  (*_environ())
+
+char ***nk_environ(void){
+
+  char** __environ;
+  int count=0;
+  struct list_head *cur;
+  STATE_LOCK_CONF;
+  STATE_LOCK();
+  list_for_each(cur, &env_list){
+    count++;
+  }
+  __environ =  malloc(sizeof(char*)*count);
+  int i = 0;
+  list_for_each(cur, &env_list){
+      __environ[i] = list_entry(cur, struct env_val, list_node)->name;
+      i++;
+  }
+
+  STATE_UNLOCK();
+  return &__environ;
+}
+
+/* static char** environ; */ 
+
 /* int setenv(const char *name, const char *value, int overwrite){ */
 
 /*     struct nk_env *ptr; */
@@ -1019,7 +1055,8 @@ char*  UNCONSTCHAR(const char* s) {
         res[i] = s[i]; 
     } 
     res[i] = '\0'; 
-    return res;}						\
+    return res;
+}					       
  
 int 
 vfprintf (FILE * stream, const char * format, va_list arg)
@@ -1051,6 +1088,7 @@ struct rlimit {
        rlim_t rlim_cur;  /* Soft limit */
        rlim_t rlim_max;  /* Hard limit (ceiling for rlim_cur) */
 };
+
 int getrlimit(int resource, struct rlimit *rlim){
   DEBUG("getrlimit %d\n", resource); 
   rlim->rlim_cur = 0xF000;
@@ -1067,14 +1105,14 @@ int getrlimit(int resource, struct rlimit *rlim){
 // Other stuff KMP needs, for a start
 
 
-GEN_DEF(atexit)
 GEN_DEF(catclose)
 GEN_DEF(catgets)
 GEN_DEF(catopen)
 GEN_DEF(close)
 GEN_DEF(closedir)
 GEN_DEF(dlsym)
-GEN_DEF(environ)
+//GEN_DEF(atexit)
+//GEN_DEF(environ)
 GEN_DEF(fgetc)
 GEN_DEF(gethostname)
 //GEN_DEF(getpid)
@@ -1083,40 +1121,40 @@ GEN_DEF(getrusage)
 //GEN_DEF(gettimeofday)
 GEN_DEF(open)
 GEN_DEF(opendir)
-GEN_DEF(pthread_atfork)
-GEN_DEF(pthread_attr_destroy)
+//GEN_DEF(pthread_atfork)
+//GEN_DEF(pthread_attr_destroy)
 GEN_DEF(pthread_attr_getstack)
 //GEN_DEF(pthread_attr_init)
-GEN_DEF(pthread_attr_setdetachstate)
-GEN_DEF(pthread_attr_setstacksize)
+//GEN_DEF(pthread_attr_setdetachstate)
+//GEN_DEF(pthread_attr_setstacksize)
 GEN_DEF(pthread_cancel)
 GEN_DEF(pthread_cond_destroy)
 //GEN_DEF(pthread_cond_init)
 GEN_DEF(pthread_cond_signal)
-GEN_DEF(pthread_cond_wait)
+//GEN_DEF(pthread_cond_wait)
 //GEN_DEF(pthread_condattr_init)
-GEN_DEF(pthread_create)
+//GEN_DEF(pthread_create)
 GEN_DEF(pthread_exit)
 GEN_DEF(pthread_getattr_np)
-GEN_DEF(pthread_getspecific)
+//GEN_DEF(pthread_getspecific)
 GEN_DEF(pthread_join)
 //GEN_DEF(pthread_key_create)
 GEN_DEF(pthread_key_delete)
 GEN_DEF(pthread_mutex_destroy)
 GEN_DEF(pthread_mutex_trylock)
 //GEN_DEF(pthread_mutexattr_init)
-GEN_DEF(pthread_self)
+//GEN_DEF(pthread_self)
 GEN_DEF(pthread_setcancelstate)
 GEN_DEF(pthread_setcanceltype)
-GEN_DEF(pthread_setspecific)
+//GEN_DEF(pthread_setspecific)
 //GEN_DEF(qsort)
 GEN_DEF(readdir)
 //GEN_DEF(sched_yield)
 //GEN_DEF(setenv)
-GEN_DEF(sigaction)
+//GEN_DEF(sigaction)
 GEN_DEF(sigaddset)
 GEN_DEF(sigdelset)
-GEN_DEF(sigemptyset)
+//GEN_DEF(sigemptyset)
 GEN_DEF(sigfillset)
 GEN_DEF(sigismember)
 GEN_DEF(sleep)

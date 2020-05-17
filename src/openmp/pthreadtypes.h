@@ -14,7 +14,8 @@
    <http://www.gnu.org/licenses/>.  */
 
 #ifndef _PTHREAD_TYPE_H
-#define _PTHREAD_TYPE__H        1
+#define _PTHREAD_TYPE_H 1
+#include <nautilus/spinlock.h>
 /* For internal mutex and condition variable definitions.  */
 #define __SIZEOF_PTHREAD_MUTEX_T 40
 #define __SIZEOF_PTHREAD_ATTR_T 56
@@ -128,12 +129,20 @@ struct pthread_condattr
   int value;
 };
 
-typedef union
+
+typedef struct __mutex
 {
-  struct __pthread_mutex_s __data;
-  char __size[__SIZEOF_PTHREAD_MUTEX_T];
-  long int __align;
+  spinlock_t spin_lock;
+  uint8_t lock_flags;
+  
 } pthread_mutex_t;
+
+/* typedef union */
+/* { */
+/*   struct __pthread_mutex_s __data; */
+/*   char __size[__SIZEOF_PTHREAD_MUTEX_T]; */
+/*   long int __align; */
+/* } pthread_mutex_t; */
 
 typedef union
 {

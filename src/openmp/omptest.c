@@ -14,15 +14,17 @@
 static int handle_gputest (char * buf, void * priv)
 {
     int i;
-    #pragma omp parallel
+    #pragma omp parallel num_threads(5)
     {
       
-      long id = getpid();
-       nk_vc_printf("omptest==thread id %d", id);	
-      //#pragma omp for private(i) 
-      /* for( i=0;i<5;i++){ */
-      /* nk_vc_printf("%d",i); */
-      /* } */
+      /* long id = getpid(); */
+      /* nk_vc_printf("****omptest==thread id %d", id);	 */
+      #pragma omp for private(i) 
+        for( i=0;i<5;i++){
+	 long id = getpid();
+         nk_vc_printf("****omptest==thread id %d\n", id);  
+        nk_vc_printf("*****working %d\n",i);
+      }
 
     }
 

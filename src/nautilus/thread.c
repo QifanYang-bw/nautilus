@@ -802,7 +802,7 @@ nk_join_all_children (int (*func)(void * res))
     list_for_each_entry_safe(elm, tmp, &(me->children), child_node) {
 
         if (nk_join(elm, &res) < 0) {
-            THREAD_ERROR("Could not join child thread (t=%p)\n", elm);
+            THREAD_ERROR("Could _not join child thread (t=%p)\n", elm);
             ret = -1;
             continue;
         }
