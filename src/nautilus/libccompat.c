@@ -882,6 +882,8 @@ GEN_DEF(strxfrm)
 GEN_DEF(wcsxfrm)
 GEN_DEF(__kernel_standard);
 GEN_DEF(__get_cpu_features);
+GEN_DEF(dlopen);
+GEN_DEF(sched_getcpu);
 
 
 // KMP
