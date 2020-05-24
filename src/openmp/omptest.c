@@ -9,17 +9,20 @@
 #define ERROR(fmt, args...) ERROR_PRINT("gpudev: " fmt, ##args)
 #define DEBUG(fmt, args...) DEBUG_PRINT("gpudev: " fmt, ##args)
 #define INFO(fmt, args...) INFO_PRINT("gpudev: " fmt, ##args)
-
+extern int pthread_init(void);
 
 static int handle_gputest (char * buf, void * priv)
 {
     int i;
+    if (0 != pthread_init()){
+     ERROR("pthread initilize failed\n");
+    }
     #pragma omp parallel num_threads(5)
     {
       
       /* long id = getpid(); */
       /* nk_vc_printf("****omptest==thread id %d", id);	 */
-      #pragma omp for private(i) 
+       #pragma omp for private(i) 
         for( i=0;i<5;i++){
 	 long id = getpid();
          nk_vc_printf("****omptest==thread id %d\n", id);  

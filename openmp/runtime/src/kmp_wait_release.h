@@ -321,9 +321,9 @@ final_spin=FALSE)
 
   // Main wait spin loop
   //mjc
-  //not escaping this while loop
-  while(false){
-  //while (flag->notdone_check()) {
+  //changed back ;not escaping this while loop
+  //while(false){
+  while (flag->notdone_check()) {
     kmp_task_team_t *task_team = NULL;
     if (__kmp_tasking_mode != tskm_immediate_exec) {
       task_team = this_thr->th.th_task_team;

@@ -23,6 +23,11 @@
 #ifndef __SEMAPHORE_H__
 #define __SEMAPHORE_H__
 
+#include <nautilus/nautilus.h>
+#include <nautilus/thread.h>
+#include <nautilus/timer.h>
+#include <nautilus/waitqueue.h>
+#include <nautilus/scheduler.h>
 
 // Semaphores are intended for threads
 // Interrupts should only use try_up and try_down
@@ -32,6 +37,22 @@
 typedef enum { NK_SEMAPHORE_DEFAULT=0 } nk_semaphore_type_t;
 
 #define NK_SEMAPHORE_NAME_LEN 32
+
+//mjc move definition here
+struct nk_semaphore {
+    spinlock_t         lock;
+    struct list_head   node; // for global list of named semaphores
+    uint64_t           refcount;
+    char               name[NK_SEMAPHORE_NAME_LEN];
+
+    // count>0  =>  normal operation (down will not wait)
+    // count==0 =>  next down will wait
+    // count <0 => -count waiters exist, next down will wait
+    int                 count;
+    nk_wait_queue_t    *wait_queue;
+    int                 prospective_count; // count blocked in timed down
+};
+
 
 // name is optional, currently only one type, and no characteristics
 struct nk_semaphore *nk_semaphore_create(char *name,

@@ -1071,11 +1071,11 @@ vfprintf (FILE * stream, const char * format, va_list arg)
     // return -1;
 }
 
-int sched_yield(void){
+/* int sched_yield(void){ */
   
-  nk_yield();
-  return 0;
-}
+/*   nk_yield(); */
+/*   return 0; */
+/* } */
 
 long sysconf(int name){
   //DEBUG("sysconf, %d",name);
@@ -1127,25 +1127,25 @@ GEN_DEF(pthread_attr_getstack)
 //GEN_DEF(pthread_attr_init)
 //GEN_DEF(pthread_attr_setdetachstate)
 //GEN_DEF(pthread_attr_setstacksize)
-GEN_DEF(pthread_cancel)
-GEN_DEF(pthread_cond_destroy)
+//GEN_DEF(pthread_cancel)
+//GEN_DEF(pthread_cond_destroy)
 //GEN_DEF(pthread_cond_init)
-GEN_DEF(pthread_cond_signal)
+//GEN_DEF(pthread_cond_signal)
 //GEN_DEF(pthread_cond_wait)
 //GEN_DEF(pthread_condattr_init)
 //GEN_DEF(pthread_create)
-GEN_DEF(pthread_exit)
+//GEN_DEF(pthread_exit)
 GEN_DEF(pthread_getattr_np)
 //GEN_DEF(pthread_getspecific)
-GEN_DEF(pthread_join)
+//GEN_DEF(pthread_join)
 //GEN_DEF(pthread_key_create)
-GEN_DEF(pthread_key_delete)
-GEN_DEF(pthread_mutex_destroy)
-GEN_DEF(pthread_mutex_trylock)
+//GEN_DEF(pthread_key_delete)
+//GEN_DEF(pthread_mutex_destroy)
+//GEN_DEF(pthread_mutex_trylock)
 //GEN_DEF(pthread_mutexattr_init)
 //GEN_DEF(pthread_self)
-GEN_DEF(pthread_setcancelstate)
-GEN_DEF(pthread_setcanceltype)
+//GEN_DEF(pthread_setcancelstate)
+//GEN_DEF(pthread_setcanceltype)
 //GEN_DEF(pthread_setspecific)
 //GEN_DEF(qsort)
 GEN_DEF(readdir)

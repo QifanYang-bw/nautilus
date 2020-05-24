@@ -24,7 +24,6 @@ obj-y += \
 	random.o \
 	smp.o \
 	idle.o \
-	thread.o \
         task.o   \
         future.o  \
 	waitqueue.o \
@@ -57,7 +56,8 @@ obj-y += \
 	linker.o \
 	prog.o \
 	getopt.o \
-	cmdline.o
+	cmdline.o \
+	thread.o \
 
 obj-$(NAUT_CONFIG_PROFILE) += instrument.o
 obj-$(NAUT_CONFIG_XEON_PHI) += sfi.o

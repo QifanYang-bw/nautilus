@@ -1495,9 +1495,9 @@ static inline void __kmp_suspend_template(int th_gtid, C *flag) {
     TCW_PTR(th->th.th_sleep_loc, (void *)flag);
    
     //mjc
-    //not going to break this while change to if 
-    if (flag->is_sleeping()){
-   // while (flag->is_sleeping()) {
+    //changed back; not going to break this while change to if 
+   // if (flag->is_sleeping()){
+    while (flag->is_sleeping()) {
 #ifdef DEBUG_SUSPEND
       char buffer[128];
       __kmp_suspend_count++;

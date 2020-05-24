@@ -1,4 +1,4 @@
-cscope 15 $HOME/nautilus/include               0001024750
+cscope 15 $HOME/nautilus/include               0001028202
 	@acpi/acexcep.h
 
 44 #i‚de‡
@@ -18257,7 +18257,7 @@ NAUT_CONFIG_NESL_RT
 
 152 
 	#NAUT_CONFIG_OPENMP_RT_INSTALL_DIR
- "/home/446/›ímp"
+ "/home/446/›ímp/lib"
 
 	)
 
@@ -64549,6 +64549,194 @@ Elf64_W‹d
 	tElf64_Nhdr
 ;
 
+	@nautilus/env.h
+
+24 #i‚de‡
+__NK_ENV
+
+
+25 
+	#__NK_ENV
+
+
+	)
+
+28 
+	#NK_ENV_MAX_NAME
+ 32
+
+	)
+
+30 
+nk_ív
+ *
+nk_ív_¸óã
+(*
+«me
+,
+
+31 
+uöt64_t
+ 
+numkeys
+,
+
+32 
+uöt64_t
+ 
+maxkeysize
+,
+
+33 
+uöt64_t
+ 
+maxvÆuesize
+);
+
+35 
+nk_ív
+ *
+nk_ív_föd
+(*
+«me
+);
+
+37 
+nk_ív_de°roy
+(
+nk_ív
+ *
+ív
+);
+
+40 
+	#NK_ENV_GLOBAL_NAME
+ "globÆ"
+
+	)
+
+41 
+	#NK_ENV_GLOBAL_MAX_NUM_KEYS
+ 64
+
+	)
+
+42 
+	#NK_ENV_GLOBAL_MAX_KEY_SIZE
+ 256
+
+	)
+
+43 
+	#NK_ENV_GLOBAL_MAX_VAL_SIZE
+ 256
+
+	)
+
+46 
+	snk_ív
+ {
+
+47 
+•ölock_t
+ 
+	mlock
+;
+
+48 
+	m«me
+[
+NK_ENV_MAX_NAME
+];
+
+49 
+li°_hód
+ 
+	mnode
+;
+
+50 
+uöt64_t
+ 
+	mnum_keys
+;
+
+51 
+uöt64_t
+ 
+	mkey_size
+;
+
+52 
+uöt64_t
+ 
+	mvÆ_size
+;
+
+53 
+	md©a
+[0];
+
+58 
+nk_ív_£¨ch
+(
+nk_ív
+ *
+ív
+, *
+key
+, **
+vÆue
+);
+
+59 
+nk_ív_ö£π
+(
+nk_ív
+ *
+ív
+, *
+key
+, *
+vÆ
+);
+
+60 
+nk_ív_upd©e
+(
+nk_ív
+ *
+ív
+, *
+key
+, *
+vÆ
+);
+
+61 
+nk_ív_dñëe
+(
+nk_ív
+ *
+ív
+, *
+key
+);
+
+64 
+nk_ív_dump_ívs
+(
+c⁄ã¡s
+);
+
+66 
+nk_ív_dump_ív
+(
+nk_ív
+ *
+ív
+);
+
 	@nautilus/errno.h
 
 23 #i‚de‡
@@ -87478,6 +87666,24 @@ l
 130 #ifde‡
 __˝lu•lus
 
+
+	@nautilus/sysconf.h
+
+1 #i‚de‡
+_SYS_CONF_H_
+
+
+2 
+	#_SYS_CONF_H_
+
+
+	)
+
+3 
+__sysc⁄f
+(
+«me
+);
 
 	@nautilus/task.h
 
@@ -159709,6 +159915,414 @@ omp_gë_wtick
 omp_gë_wtime
 ();
 
+	@rt/openmp/nk_pthread.h
+
+18 #i‚de‡
+_PTHREAD_H_
+
+
+19 
+	#_PTHREAD_H_
+
+
+	)
+
+21 
+	~<«utûus/thªad.h
+>
+
+22 
+	~<«utûus/•ölock.h
+>
+
+24 
+	s__em±y
+{
+
+25 
+	ma
+;
+
+28 
+	#±hªad_t
+ 
+nk_thªad_id_t
+
+
+	)
+
+29 
+	#±hªad_c⁄d©å_t
+ 
+
+	)
+
+30 
+	#±hªad_c⁄d_t
+ 
+
+	)
+
+31 
+	#±hªad_muãx_t
+ 
+•ölock_t
+
+
+	)
+
+32 
+	#±hªad_muãx©å_t
+ 
+
+	)
+
+33 
+	#±hªad_©å_t
+ 
+
+	)
+
+40 
+±hªad_muãx_öô
+ (
+±hªad_muãx_t
+ *
+__muãx
+,
+
+41 c⁄° 
+±hªad_muãx©å_t
+ *
+__muãx©å
+);
+
+49 
+±hªad_muãx©å_öô
+ (
+±hªad_muãx©å_t
+ *
+__©å
+);
+
+52 
+±hªad_©å_öô
+ (
+±hªad_©å_t
+ *
+__©å
+);
+
+	@rt/openmp/omp/nkkmp.h
+
+23 #i‚de‡
+_NK_OMP_
+
+
+24 
+	#_NK_OMP_
+
+
+	)
+
+26 
+	~<«utûus/«ut_ty≥s.h
+>
+
+27 
+	~<«utûus/libccom∑t.h
+>
+
+28 
+	#su£c⁄ds_t
+ 
+uöt64_t
+
+
+	)
+
+29 
+	stimevÆ
+ {
+
+30 
+time_t
+ 
+	mtv_£c
+;
+
+31 
+su£c⁄ds_t
+ 
+	mtv_u£c
+;
+
+35 
+nk_›ímp_öô
+();
+
+36 
+nk_›ímp_deöô
+();
+
+45 
+nk_›ímp_thªad_öô
+();
+
+46 
+nk_›ímp_thªad_deöô
+();
+
+57 
+omp_gë_a˘ive_Àvñ
+();
+
+58 
+omp_gë_™˚°‹_thªad_num
+(
+Àvñ
+);
+
+59 
+omp_gë_ˇn˚Œ©i⁄
+();
+
+60 
+omp_gë_deÁu…_devi˚
+();
+
+61 
+omp_gë_dy«mic
+();
+
+62 
+omp_gë_Àvñ
+();
+
+63 
+omp_gë_max_a˘ive_Àvñs
+();
+
+64 
+omp_gë_max_èsk_¥i‹ôy
+();
+
+65 
+omp_gë_max_thªads
+();
+
+66 
+omp_gë_√°ed
+();
+
+67 
+omp_gë_num_devi˚s
+();
+
+68 
+omp_gë_num_¥ocs
+();
+
+69 
+omp_gë_num_ãams
+();
+
+70 
+omp_gë_num_thªads
+();
+
+72 
+	tomp_¥oc_böd_t
+;
+
+74 
+omp_¥oc_böd_t
+ 
+omp_gë_¥oc_böd
+();
+
+76 * 
+	tomp_sched_t
+;
+
+78 
+omp_gë_scheduÀ
+(
+omp_sched_t
+ *
+köd
+, *
+chunk_size
+);
+
+80 
+omp_gë_ãam_num
+();
+
+81 
+omp_gë_ãam_size
+(
+Àvñ
+);
+
+82 
+omp_gë_thªad_limô
+();
+
+83 
+omp_gë_thªad_num
+();
+
+84 
+omp_ö_∑øŒñ
+();
+
+85 
+omp_ö_föÆ
+();
+
+86 
+omp_is_öôül_devi˚
+();
+
+87 
+omp_£t_deÁu…_devi˚
+(
+devi˚_num
+);
+
+88 
+omp_£t_dy«mic
+(
+dy«mic_thªads
+);
+
+89 
+omp_£t_max_a˘ive_Àvñs
+(
+max_Àvñs
+);
+
+90 
+omp_£t_√°ed
+(
+√°ed
+);
+
+91 
+omp_£t_num_thªads
+(
+num_thªads
+);
+
+92 
+omp_£t_scheduÀ
+(
+omp_sched_t
+ 
+köd
+, 
+chunk_size
+);
+
+94 * 
+	tomp_lock_t
+;
+
+96 
+omp_öô_lock
+(
+omp_lock_t
+ *
+lock
+);
+
+97 
+omp_£t_lock
+(
+omp_lock_t
+ *
+lock
+);
+
+98 
+omp_ã°_lock
+(
+omp_lock_t
+ *
+lock
+);
+
+99 
+omp_un£t_lock
+(
+omp_lock_t
+ *
+lock
+);
+
+100 
+omp_de°roy_lock
+(
+omp_lock_t
+ *
+lock
+);
+
+103 
+omp_lock_t
+ 
+	tomp_√°_lock_t
+;
+
+105 
+omp_öô_√°_lock
+(
+omp_√°_lock_t
+ *
+lock
+);
+
+106 
+omp_£t_√°_lock
+(
+omp_√°_lock_t
+ *
+lock
+);
+
+107 
+omp_ã°_√°_lock
+(
+omp_√°_lock_t
+ *
+lock
+);
+
+108 
+omp_un£t_√°_lock
+(
+omp_√°_lock_t
+ *
+lock
+);
+
+109 
+omp_de°roy_√°_lock
+(
+omp_√°_lock_t
+ *
+lock
+);
+
+111 
+omp_gë_wtick
+();
+
+112 
+omp_gë_wtime
+();
+
 	@rt/openmp/omp/omp.h
 
 23 #i‚de‡
@@ -181644,8 +182258,8 @@ __GCC_IEC_559_COMPLEX
 .
 1
 /usr/include
-481
-10264
+485
+10343
 acpi/acexcep.h
 acpi/acnames.h
 acpi/acoutput.h
@@ -181883,6 +182497,7 @@ nautilus/doprnt.h
 nautilus/dr.h
 nautilus/elf-em.h
 nautilus/elf.h
+nautilus/env.h
 nautilus/errno.h
 nautilus/fiber.h
 nautilus/fmtout.h
@@ -181946,6 +182561,7 @@ nautilus/shell.h
 nautilus/shutdown.h
 nautilus/smp.h
 nautilus/spinlock.h
+nautilus/sysconf.h
 nautilus/task.h
 nautilus/testfs.h
 nautilus/thread.h
@@ -182099,6 +182715,8 @@ rt/ndpc/ndpc_preempt_threads.h
 rt/nesl/cvl.h
 rt/nesl/nesl.h
 rt/openmp/gomp/gomp.h
+rt/openmp/nk_pthread.h
+rt/openmp/omp/nkkmp.h
 rt/openmp/omp/omp.h
 rt/openmp/openmp.h
 test/cachepart.h
