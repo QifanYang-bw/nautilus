@@ -1,4 +1,3 @@
-
 /* pte_types.h  */
 
 #ifndef PTE_TYPES_H
@@ -18,6 +17,7 @@ struct thread_with_signal{
 };
 
 typedef  struct pmutex* pte_osMutexHandle;
+//typedef spinlock_t* pte_osMutexHandle;
 typedef  nk_thread_fun_t pte_osThreadEntryPoint;
 typedef  struct thread_with_signal* pte_osThreadHandle;
 typedef struct nk_semaphore* pte_osSemaphoreHandle;

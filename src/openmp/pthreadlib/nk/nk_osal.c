@@ -367,17 +367,18 @@ pte_osResult pte_osSemaphorePost(pte_osSemaphoreHandle handle, int count){
  */
 pte_osResult pte_osSemaphorePend(pte_osSemaphoreHandle handle, unsigned int *pTimeout){
    DEBUG("osSemaphorePend\n");
+   SEMAPHORE_LOCK_CONF;
    if(pTimeout == NULL){
        DEBUG("osSemaphorePend NULL time\n");
+       SEMAPHORE_LOCK(handle);
        // nk_yield();
-       nk_thread_exit(NULL);
+       //nk_thread_exit(NULL);
        return PTE_OS_OK;
        //nk_yield();
        //nk_thread_exit(NULL);
    }else{
      
     struct nk_semaphore* s = handle;
-    SEMAPHORE_LOCK_CONF;
     DEBUG("release semaphore with name %s\n",s->name);
     unsigned int start = (unsigned int) time(NULL);
     unsigned int end = start;
@@ -411,12 +412,17 @@ pte_osResult pte_osSemaphoreCancellablePend(pte_osSemaphoreHandle handle, unsign
      nk_thread_t* thethread= get_cur_thread();
      pte_osThreadHandle oshandle = pcontainer_of(thethread, struct thread_with_signal, tid);
      DEBUG("osSemaphorecancelablepend\n");
+     SEMAPHORE_LOCK_CONF;
+     int res = -1;
      if(pTimeout == NULL){
-     while(pTimeout == NULL){
+     while(true){
        if(oshandle->signal == NK_THREAD_CANCEL){
          return PTE_OS_INTERRUPTED;
        }
-       nk_yield();
+       res = SEMAPHORE_TRY_LOCK(handle);
+       if(res == 0){
+         return PTE_OS_OK;
+       }
       }
      }else{
      struct nk_semaphore* s = handle;
@@ -424,7 +430,6 @@ pte_osResult pte_osSemaphoreCancellablePend(pte_osSemaphoreHandle handle, unsign
      DEBUG("release semaphore with name %s\n",s->name);
      unsigned int start = (unsigned int) time(NULL);
      unsigned int end = start;
-     int res = -1;
      while( (end-start) < *pTimeout ){
        if(oshandle->signal == NK_THREAD_CANCEL){
          return PTE_OS_INTERRUPTED;
