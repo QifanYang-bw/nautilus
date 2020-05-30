@@ -137,6 +137,9 @@ pthread_create (pthread_t * tid,
   parms->start = start;
   parms->arg = arg;
 
+  //mjc add thread attr
+  //thread.attr = *attr;
+
   if (a != NULL)
     {
       stackSize = a->stacksize;
@@ -204,7 +207,8 @@ pthread_create (pthread_t * tid,
       (void) pthread_mutex_unlock (&tp->threadLock);
     }
 
-  osResult = pte_osThreadCreate(pte_threadStart,
+  //mjc change pte_threadstart to function pointer
+  osResult = pte_osThreadCreate(&pte_threadStart,
                                 stackSize,
                                 priority,
                                 parms,

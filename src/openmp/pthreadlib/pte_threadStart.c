@@ -76,7 +76,7 @@ pte_terminate ()
 
 #endif
 
-int pte_threadStart (void *vthreadParms)
+int pte_threadStart (void *vthreadParms, void ** out)
 {
   ThreadParms * threadParms = (ThreadParms *) vthreadParms;
   pthread_t self;

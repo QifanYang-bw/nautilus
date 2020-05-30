@@ -396,6 +396,8 @@ enum
       {
         void * p;                   /* Pointer to actual object */
         unsigned int x;             /* Extra information - reuse count etc */
+        //mjc add attr into pthread_t
+	//struct pthread_attr_t_* attr;
       } pte_handle_t;
 
     typedef pte_handle_t pthread_t;
@@ -680,7 +682,9 @@ enum
 
     int  pthread_attr_getstacksize (const pthread_attr_t * attr,
                                     size_t * stacksize);
-
+     int  pthread_attr_getstack (const pthread_attr_t * attr,
+		               void **stackaddr, 
+			       size_t *stacksize);
     int  pthread_attr_setdetachstate (pthread_attr_t * attr,
                                       int detachstate);
 
@@ -733,6 +737,9 @@ enum
                        void **value_ptr);
 
     pthread_t  pthread_self (void);
+
+    //mjc
+    int pthread_getattr_np(pthread_t thread, pthread_attr_t * attr);
 
     int  pthread_cancel (pthread_t thread);
 

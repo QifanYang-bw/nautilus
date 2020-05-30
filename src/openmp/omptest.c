@@ -22,11 +22,11 @@ static int handle_gputest (char * buf, void * priv)
       
       /* long id = getpid(); */
       /* nk_vc_printf("****omptest==thread id %d", id);	 */
-       #pragma omp for private(i) 
-        for( i=0;i<5;i++){
+       #pragma omp for nowait schedule(static,1) 
+        for( i=0;i<10;i++){
 	 long id = getpid();
          nk_vc_printf("****omptest==thread id %d\n", id);  
-        nk_vc_printf("*****working %d\n",i);
+         nk_vc_printf("*****working %d\n",i);
       }
 
     }

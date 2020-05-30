@@ -12,7 +12,7 @@ struct pmutex{
   uint8_t  flags;
 };
 struct thread_with_signal{
-  nk_thread_t tid;
+  nk_thread_id_t tid;
   uint8_t signal;
 };
 

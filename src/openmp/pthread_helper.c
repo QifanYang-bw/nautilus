@@ -113,18 +113,22 @@
 int pthread_atfork (void (*prepare) (void), void (*parent) (void),
                   void (*child) (void))
 {
+  DEBUG("register pthread atfork\n");
   return 0;
 }
 
 int sigaction(){
+  DEBUG("sigaction\n");
   return 0;
 }
 
 int sigemptyset(){
+  DEBUG("sigemptyset\n");
   return 0;
 }
 
 int atexit(){
+  DEBUG("atexit\n");
   // nk_thread_exit();
   return 0;
 }

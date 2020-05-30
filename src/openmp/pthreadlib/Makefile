@@ -58,8 +58,9 @@ THREAD_OBJS = \
   pthread_getschedparam.o \
   pthread_setschedparam.o \
   sched_get_priority_max.o \
-  sched_get_priority_min.o
-
+  sched_get_priority_min.o \
+  pthread_attr_getstack.o \
+  pthread_getattr_np.o
 
 TLS_OBJS = \
   pthread_key_create.o \

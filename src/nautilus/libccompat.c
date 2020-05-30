@@ -1095,7 +1095,10 @@ int getrlimit(int resource, struct rlimit *rlim){
   rlim->rlim_max = 0xF000;
   return 0;
 }
-
+char* strerror_r(int errnum, char* buf, size_t buflen){
+  memcpy(buf, 'e', sizeof(buflen));
+  return buf;
+}
 /* void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*)){ */
 /*   //empty */
 
@@ -1103,6 +1106,11 @@ int getrlimit(int resource, struct rlimit *rlim){
 
 
 // Other stuff KMP needs, for a start
+
+int atomic_load_explicit(void *ptr ,int mmodel){
+  DEBUG("calls into atomic_load_explicit\n");
+  return 1;//__sync_fetch_and_or(ptr,0);
+}
 
 
 GEN_DEF(catclose)
@@ -1123,7 +1131,7 @@ GEN_DEF(open)
 GEN_DEF(opendir)
 //GEN_DEF(pthread_atfork)
 //GEN_DEF(pthread_attr_destroy)
-GEN_DEF(pthread_attr_getstack)
+//GEN_DEF(pthread_attr_getstack)
 //GEN_DEF(pthread_attr_init)
 //GEN_DEF(pthread_attr_setdetachstate)
 //GEN_DEF(pthread_attr_setstacksize)
@@ -1135,7 +1143,7 @@ GEN_DEF(pthread_attr_getstack)
 //GEN_DEF(pthread_condattr_init)
 //GEN_DEF(pthread_create)
 //GEN_DEF(pthread_exit)
-GEN_DEF(pthread_getattr_np)
+//GEN_DEF(pthread_getattr_np)
 //GEN_DEF(pthread_getspecific)
 //GEN_DEF(pthread_join)
 //GEN_DEF(pthread_key_create)
@@ -1158,7 +1166,7 @@ GEN_DEF(sigdelset)
 GEN_DEF(sigfillset)
 GEN_DEF(sigismember)
 GEN_DEF(sleep)
-GEN_DEF(strerror_r)
+//GEN_DEF(strerror_r)
 GEN_DEF(strtok_r)
 //GEN_DEF(sysconf)
 GEN_DEF(times)

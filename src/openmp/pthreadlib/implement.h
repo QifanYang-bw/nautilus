@@ -476,8 +476,9 @@ extern "C"
     int pte_setthreadpriority (pthread_t thread, int policy, int priority);
 
     void pte_rwlock_cancelwrwait (void *arg);
-
-    int pte_threadStart (void *vthreadParms);
+    
+    //mjc add out
+    int pte_threadStart (void *vthreadParms, void ** out);
 
     void pte_callUserDestroyRoutines (pthread_t thread);
 

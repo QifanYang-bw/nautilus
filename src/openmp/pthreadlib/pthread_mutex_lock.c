@@ -74,8 +74,10 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
           return (result);
         }
     }
-
+  
+  //orig
   mx = *mutex;
+  //mjc
 
   if (mx->kind == PTHREAD_MUTEX_NORMAL)
     {

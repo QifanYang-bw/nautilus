@@ -1,8 +1,8 @@
 /*
- * pthread_mutex_init.c
+ * pthread_attr_getstackaddr.c
  *
  * Description:
- * This translation unit implements mutual exclusion (mutex) primitives.
+ * This translation unit implements operations on thread attribute objects.
  *
  * --------------------------------------------------------------------------
  *
@@ -40,55 +40,17 @@
  *      59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  */
 
-/* #include <stdio.h> */
-/* #include <stdlib.h> */
-#include <nautilus/nautilus.h>
 #include "pthread.h"
 #include "implement.h"
 
 
-#define ERROR(fmt, args...) ERROR_PRINT("embpthread: " fmt, ##args)
-#define DEBUG(fmt, args...) DEBUG_PRINT("embpthread: " fmt, ##args)
-#define INFO(fmt, args...)   INFO_PRINT("embpthread: " fmt, ##args)
-
-
 int
-pthread_mutex_init (pthread_mutex_t * mutex, const pthread_mutexattr_t * attr)
+pthread_attr_getstack (const pthread_attr_t * attr, void **stackaddr, size_t *stacksize)
 {
-  int result = 0;
-  pthread_mutex_t mx;
+   int addr =  pthread_attr_getstackaddr(attr, stackaddr);
+   int size = pthread_attr_getstacksize(attr,stacksize);
+   if (addr == size == 0){
+     return 0;
+   }
 
-
-  if (mutex == NULL)
-    {
-      return EINVAL;
-    }
-
-  mx = (pthread_mutex_t) calloc (1, sizeof (*mx));
-  memset(mx, 0, 1*sizeof(*mx));
-  if (mx == NULL)
-    {
-      result = ENOMEM;
-    }
-  else
-    {
-      mx->lock_idx = 0;
-      mx->recursive_count = 0;
-      DEBUG("attr addr %08x\n", attr);
-      DEBUG("attr kind %08x\n", *attr);
-
-      mx->kind = PTHREAD_MUTEX_DEFAULT;
-      //mjc
-      //mx->kind = (attr == NULL || *attr == NULL \
-                  ? PTHREAD_MUTEX_DEFAULT : (*attr)->kind);
-      DEBUG("pass mxkind\n");
-      mx->ownerThread.p = NULL;
-
-      pte_osSemaphoreCreate(0,&mx->handle);
-
-    }
-
-  *mutex = mx;
-
-  return (result);
 }

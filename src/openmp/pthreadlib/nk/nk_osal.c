@@ -3,6 +3,7 @@
 #include "pte_osal.h"
 #include <nautilus/libccompat.h>
 #include <nautilus/thread.h>
+#include <nautilus/scheduler.h>
 #include <nautilus/semaphore.h>
 
 #define ERROR(fmt, args...) ERROR_PRINT("embpthread: " fmt, ##args)
@@ -140,9 +141,16 @@ pte_osResult pte_osThreadCreate(pte_osThreadEntryPoint entryPoint,
   //pte_osThreadEntryPoint is nk_thread_fun
   //pte_osThreadhandle will be nk_thread_id
   pte_osThreadHandle handleobj = malloc(sizeof(struct thread_with_signal));
+  memset(handleobj,0,sizeof(struct thread_with_signal));
+  int ret = nk_thread_create(entryPoint, argv, NULL, false,(nk_stack_size_t) stackSize, &(handleobj->tid),-1);
+  if (ret != 0){
+    DEBUG("create error exit\n");
+    nk_thread_exit(NULL);
+  }
   *handle = handleobj;
-  nk_thread_create(entryPoint, NULL,NULL, false,(nk_stack_size_t) stackSize, &(handleobj->tid),-1);
-  DEBUG("osThreadCreate\n"); 
+  struct nk_thread* thread = (struct nk_thread*) (*handle)->tid;
+  DEBUG("osThreadCreate %08x, %ld\n",  thread, thread->tid);
+ 
   return PTE_OS_OK;
 }
 /**
@@ -153,8 +161,12 @@ pte_osResult pte_osThreadCreate(pte_osThreadEntryPoint entryPoint,
  * @return PTE_OS_OK - thread successfully started.
  */
 pte_osResult pte_osThreadStart(pte_osThreadHandle handle){
-  nk_thread_run(&(handle->tid));
-  DEBUG("osThreadStart\n");
+  //struct nk_thread* thread = (struct nk_thread*) &(handle->tid);
+  //thread->sched_state->constraints.type = APERIODIC;
+  //nk_thread_run(&(handle->tid));
+  nk_thread_run(handle->tid);
+  DEBUG("osThreadStart %08x\n", handle);
+
   return PTE_OS_OK;
 }
 
@@ -164,6 +176,7 @@ pte_osResult pte_osThreadStart(pte_osThreadHandle handle){
  * @return Never returns (thread terminated)
  */
 void pte_osThreadExit(){
+  DEBUG("osthread EXIT\n");
   nk_thread_exit(NULL);
 }
 
@@ -176,6 +189,7 @@ void pte_osThreadExit(){
  * @return PTE_OS_OK - specified thread terminated.
  */
 pte_osResult pte_osThreadWaitForEnd(pte_osThreadHandle threadHandle){
+  DEBUG("pte osThread Wait For End\n");
   nk_thread_t *thread = (nk_thread_t*) &(threadHandle->tid);
   while(true){
     if(thread->status==NK_THR_EXITED){
@@ -244,6 +258,7 @@ pte_osResult pte_osThreadExitAndDelete(pte_osThreadHandle handle){
  * @return Thread successfully canceled.
  */
 pte_osResult pte_osThreadCancel(pte_osThreadHandle handle){
+  DEBUG("osThreadCancel \n");
    handle->signal = NK_THREAD_CANCEL;
    // nk_thread_cancel(&(handle->tid));  
 }
@@ -270,12 +285,15 @@ pte_osResult pte_osThreadCheckCancel(pte_osThreadHandle handle){
  * Causes the current thread to sleep for the specified number of milliseconds.
  */
 void pte_osThreadSleep(unsigned int msecs){
+  //DEBUG("os thread start to sleep\n");
+  //nk_thread_exit(NULL);
   unsigned int start = (unsigned int) time(NULL);
   unsigned int end = start;
   int res = -1;
   while( (end-start) <msecs ){
     nk_yield();
     end = (unsigned int)time(NULL);
+    //DEBUG("os Thread Sleep end %d time %d \n", end-start, msecs);
   }
 }
 
@@ -531,10 +549,11 @@ pte_osResult pte_osTlsFree(unsigned int key){
  */
 int pte_osAtomicExchange(int *pTarg, int val){
 
-  int ret = (int) xchg64((void**)(&pTarg),(void*)(&val));
-  DEBUG("AtomicEXCHANGE, %d , %d\n", *pTarg, ret );
-  return 0;
-  return *pTarg;
+  //int origin = *pTarg;
+  return *((int*) xchg64((void**)(&pTarg),(void*)(&val)));
+  //DEBUG("AtomicEXCHANGE, ORIG %d , NOW %d val %d ret %d\n", origin, *pTarg, val, *ret);
+  // return 0;
+  // return origin;
   //???
   // return (int)(ret);
 }
@@ -557,6 +576,7 @@ int pte_osAtomicExchange(int *pTarg, int val){
  * @return Original value of destination
  */
 int pte_osAtomicCompareExchange(int *pdest, int exchange, int comp){
+    DEBUG("AtomicCompareEXCHANGE");
   return __sync_val_compare_and_swap(pdest,comp,exchange);
   // return atomic_cmpswap(pdest, comp, exchange);
 } 
@@ -576,6 +596,7 @@ int pte_osAtomicCompareExchange(int *pdest, int exchange, int comp){
  * @return Original value of destination
  */
 int  pte_osAtomicExchangeAdd(int volatile* pdest, int value){
+    DEBUG("AtomicEXCHANGEAdd\n");
   return __sync_fetch_and_add(pdest, value);
   //return atomic_add(pdest, value);
 }
@@ -594,6 +615,7 @@ int  pte_osAtomicExchangeAdd(int volatile* pdest, int value){
  * @return Original destination value
  */
 int pte_osAtomicDecrement(int *pdest){
+    DEBUG("AtomicDecrement\n" );
   return __sync_fetch_and_sub(pdest,1);
     //return atomic_dec(pdest);
 }
@@ -607,6 +629,7 @@ int pte_osAtomicDecrement(int *pdest){
  * return origVal;
  */
 int pte_osAtomicIncrement(int *pdest){
+    DEBUG("AtomicIncrement\n");
   return __sync_fetch_and_add(pdest,1);
   //return atomic_inc(pdest);
 }

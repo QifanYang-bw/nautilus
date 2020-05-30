@@ -60,8 +60,11 @@ pthread_mutex_unlock (pthread_mutex_t * mutex)
   /*
    * Let the system deal with invalid pointers.
    */
-
+  //orig
   mx = *mutex;
+  //mjc
+  //pthread_mutex_t *mx;
+  //mx = mutex;
 
   /*
    * If the thread calling us holds the mutex then there is no

@@ -1,4 +1,4 @@
-cscope 15 $HOME/nautilus/src/openmp/pthreadlib               0000132448
+cscope 15 $HOME/nautilus/src/openmp/pthreadlib               0000134221
 	@cleanup.c
 
 45 
@@ -459,39 +459,39 @@ sched_¥i‹ôy
 thªadLock
 );
 
-207 
+208 
 osResu…
  = 
 	`±e_osThªadCª©e
-(
+(&
 ±e_thªadSèπ
 ,
 
-208 
+209 
 °ackSize
 ,
 
-209 
+210 
 ¥i‹ôy
 ,
 
-210 
+211 
 ∑rms
 ,
 
-211 &(
+212 &(
 ç
 ->
 thªadId
 ));
 
-213 i‡(
+214 i‡(
 osResu…
  =
 PTE_OS_OK
 )
 
-215 
+216 
 	`±e_osThªadSèπ
 (
 ç
@@ -499,75 +499,75 @@ PTE_OS_OK
 thªadId
 );
 
-216 
+217 
 ªsu…
  = 0;
 
-220 
+221 
 ç
 ->
 thªadId
  = 0;
 
-221 
+222 
 ªsu…
  = 
 EAGAIN
 ;
 
-222 
+223 
 FAIL0
 ;
 
-235 
+236 
 FAIL0
 :
 
-236 i‡(
+237 i‡(
 ªsu…
  != 0)
 
-239 
+240 
 	`±e_thªadDe°roy
  (
 thªad
 );
 
-240 
+241 
 ç
  = 
 NULL
 ;
 
-242 i‡(
+243 i‡(
 ∑rms
  !
 NULL
 )
 
-244 
+245 
 	`‰ì
  (
 ∑rms
 );
 
-249 i‡(
+250 i‡(
 tid
  !
 NULL
 )
 
-251 *
+252 *
 tid
  = 
 thªad
 ;
 
-255  (
+256  (
 ªsu…
 );
 
-257 
+258 
 	}
 }
 
@@ -1509,13 +1509,15 @@ pﬁicy
 ¨g
 );
 
-480 
+481 
 ±e_thªadSèπ
  (*
 vthªadP¨ms
+, ** 
+out
 );
 
-482 
+483 
 ±e_ˇŒU£rDe°royRoutöes
  (
 ±hªad_t
@@ -1523,7 +1525,7 @@ vthªadP¨ms
 thªad
 );
 
-484 
+485 
 ±e_tkAssocCª©e
  (
 ±e_thªad_t
@@ -1535,7 +1537,7 @@ thªad
 key
 );
 
-486 
+487 
 ±e_tkAssocDe°roy
  (
 ThªadKeyAssoc
@@ -1543,7 +1545,7 @@ ThªadKeyAssoc
 assoc
 );
 
-488 
+489 
 £m_waô_noˇn˚l
  (
 £m_t
@@ -1551,7 +1553,7 @@ assoc
 £m
 );
 
-490 
+491 
 ±e_ªlmûli£cs
  (c⁄° 
 time•ec
@@ -1559,7 +1561,7 @@ time•ec
 ab°ime
 );
 
-492 
+493 
 ±e_mcs_lock_acquúe
  (
 ±e_mcs_lock_t
@@ -1571,7 +1573,7 @@ lock
 node
 );
 
-494 
+495 
 ±e_mcs_lock_ªÀa£
  (
 ±e_mcs_loˇl_node_t
@@ -1579,13 +1581,13 @@ node
 node
 );
 
-497 
+498 
 ±e_throw
  (
 ex˚±i⁄
 );
 
-499 
+500 
 ±e_ˇn˚ŒabÀ_waô
  (
 ±e_osSem≠h‹eH™dÀ
@@ -1595,7 +1597,7 @@ ex˚±i⁄
 timeout
 );
 
-501 
+502 
 	#PTE_ATOMIC_EXCHANGE
  
 ±e_osAtomicExch™ge
@@ -1603,7 +1605,7 @@ timeout
 
 	)
 
-502 
+503 
 	#PTE_ATOMIC_EXCHANGE_ADD
  
 ±e_osAtomicExch™geAdd
@@ -1611,7 +1613,7 @@ timeout
 
 	)
 
-503 
+504 
 	#PTE_ATOMIC_COMPARE_EXCHANGE
  
 ±e_osAtomicCom∑ªExch™ge
@@ -1619,7 +1621,7 @@ timeout
 
 	)
 
-504 
+505 
 	#PTE_ATOMIC_DECREMENT
  
 ±e_osAtomicDe¸emít
@@ -1627,7 +1629,7 @@ timeout
 
 	)
 
-505 
+506 
 	#PTE_ATOMIC_INCREMENT
  
 ±e_osAtomicIn¸emít
@@ -1635,15 +1637,15 @@ timeout
 
 	)
 
-507 
+508 
 ±e_thªad_dëach_≈
 ();
 
-508 
+509 
 ±e_thªad_dëach_™d_exô_≈
 ();
 
-511 #ifde‡
+512 #ifde‡
 __˝lu•lus
 
 
@@ -1934,10 +1936,14 @@ __˝lu•lus
 >
 
 6 
+	~<«utûus/scheduÀr.h
+>
+
+7 
 	~<«utûus/£m≠h‹e.h
 >
 
-8 
+9 
 	#ERROR
 (
 fmt
@@ -1949,7 +1955,7 @@ fmt
 
 	)
 
-9 
+10 
 	#DEBUG
 (
 fmt
@@ -1961,7 +1967,7 @@ fmt
 
 	)
 
-10 
+11 
 	#INFO
 (
 fmt
@@ -1973,7 +1979,7 @@ fmt
 
 	)
 
-13 
+14 
 	#STATE_UNLOCK
 (
 a
@@ -1985,7 +1991,7 @@ b
 
 	)
 
-14 
+15 
 	#STATE_TRY_LOCK
 (
 a
@@ -1997,7 +2003,7 @@ b
 
 	)
 
-15 
+16 
 	#STATE_LOCK
 (
 a
@@ -2007,7 +2013,7 @@ a
 
 	)
 
-17 
+18 
 	#SEMAPHORE_LOCK_CONF
  
 uöt8_t
@@ -2017,7 +2023,7 @@ _£m≠h‹e_lock_Êags
 
 	)
 
-18 
+19 
 	#SEMAPHORE_LOCK
 (
 s
@@ -2031,7 +2037,7 @@ lock
 
 	)
 
-19 
+20 
 	#SEMAPHORE_TRY_LOCK
 (
 s
@@ -2045,7 +2051,7 @@ _£m≠h‹e_lock_Êags
 
 	)
 
-20 
+21 
 	#SEMAPHORE_UNLOCK
 (
 s
@@ -2059,7 +2065,7 @@ _£m≠h‹e_lock_Êags
 
 	)
 
-21 
+22 
 	#SEMAPHORE_UNIRQ
 (
 s
@@ -2071,7 +2077,7 @@ _£m≠h‹e_lock_Êags
 
 	)
 
-23 
+24 
 	#poff£tof
 (
 TYPE
@@ -2083,7 +2089,7 @@ size_t
 
 	)
 
-24 
+25 
 	#pc⁄èöî_of
 (
 ±r
@@ -2093,7 +2099,7 @@ ty≥
 membî
 ) ({ \
 
-25 c⁄° 
+26 c⁄° 
 	`ty≥of
 –((
 ty≥
@@ -2105,7 +2111,7 @@ __m±r
 ±r
 ); \
 
-26 (
+27 (
 ty≥
  *)–(*)
 __m±r
@@ -2117,21 +2123,21 @@ membî
 
 	)
 
-34 
+35 
 ±e_osResu…
  
 	$±e_osInô
 (){
 
-35  
+36  
 PTE_OS_OK
 ;
 
-36 
+37 
 	}
 }
 
-46 
+47 
 ±e_osResu…
  
 	$±e_osMuãxCª©e
@@ -2141,7 +2147,7 @@ PTE_OS_OK
 pH™dÀ
 ){
 
-47 *
+49 *
 pH™dÀ
  = 
 	`mÆloc
@@ -2149,7 +2155,7 @@ pH™dÀ
 pmuãx
 ));
 
-48 
+50 
 	`•ölock_öô
 ((*
 pH™dÀ
@@ -2157,15 +2163,19 @@ pH™dÀ
 lock
 );
 
-49  
+51 
+	`DEBUG
+("osMutexCreate\n");
+
+52  
 PTE_OS_OK
 ;
 
-50 
+53 
 	}
 }
 
-59 
+62 
 ±e_osResu…
  
 	$±e_osMuãxDñëe
@@ -2175,7 +2185,7 @@ PTE_OS_OK
 h™dÀ
 ){
 
-60 
+63 
 	`•ölock_deöô
 (&(
 h™dÀ
@@ -2183,15 +2193,19 @@ h™dÀ
 lock
 ));
 
-61  
+64 
+	`DEBUG
+("osMutexDelete\n");
+
+65  
 PTE_OS_OK
 ;
 
-62 
+66 
 	}
 }
 
-71 
+75 
 ±e_osResu…
  
 	$±e_osMuãxLock
@@ -2201,11 +2215,11 @@ PTE_OS_OK
 h™dÀ
 ){
 
-72 
+76 
 ™s
 = -1;
 
-73 
+77 
 h™dÀ
 ->
 Êags
@@ -2215,15 +2229,19 @@ h™dÀ
 lock
 ));
 
-75  
+78 
+	`DEBUG
+("osMutexLock\n");
+
+79  
 PTE_OS_OK
 ;
 
-77 
+81 
 	}
 }
 
-89 
+93 
 ±e_osResu…
  
 	$±e_osMuãxTimedLock
@@ -2235,7 +2253,7 @@ h™dÀ
 timeout
 ){
 
-90 
+94 
 °¨t
  = (Ë
 	`time
@@ -2243,17 +2261,17 @@ timeout
 NULL
 );
 
-91 
+95 
 íd
  = 
 °¨t
 ;
 
-92 
+96 
 ªs
  = -1;
 
-93  (
+97  (
 íd
 -
 °¨t
@@ -2261,7 +2279,7 @@ NULL
 timeout
  ){
 
-94 
+98 
 ªs
 =
 	`STATE_TRY_LOCK
@@ -2273,7 +2291,11 @@ lock
 Êags
 ) );
 
-95 
+99 
+	`DEBUG
+("osMutexTimedLock\n");
+
+100 
 íd
  = ()
 	`time
@@ -2281,23 +2303,23 @@ lock
 NULL
 );
 
-96 if(
+101 if(
 ªs
  == 0){
 
-97  
+102  
 PTE_OS_OK
 ;
 
-100  
+105  
 PTE_OS_TIMEOUT
 ;
 
-101 
+106 
 	}
 }
 
-110 
+115 
 ±e_osResu…
  
 	$±e_osMuãxU∆ock
@@ -2307,7 +2329,7 @@ PTE_OS_TIMEOUT
 h™dÀ
 ){
 
-111 
+116 
 	`STATE_UNLOCK
 (&(
 h™dÀ
@@ -2317,15 +2339,19 @@ lock
 Êags
 );
 
-112  
+117 
+	`DEBUG
+("osMutexUnlock\n");
+
+118  
 PTE_OS_OK
 ;
 
-113 
+119 
 	}
 }
 
-129 
+135 
 ±e_osResu…
  
 	$±e_osThªadCª©e
@@ -2335,25 +2361,25 @@ PTE_OS_OK
 íåyPoöt
 ,
 
-130 
+136 
 °ackSize
 ,
 
-131 
+137 
 öôülPri‹ôy
 ,
 
-132 *
+138 *
 ¨gv
 ,
 
-133 
+139 
 ±e_osThªadH™dÀ
 * 
 h™dÀ
 )
 
-137 
+143 
 ±e_osThªadH™dÀ
  
 h™dÀobj
@@ -2363,20 +2389,26 @@ h™dÀobj
 thªad_wôh_sig«l
 ));
 
-138 *
-h™dÀ
- = 
+144 
+	`mem£t
+(
 h™dÀobj
-;
+,0,(
+thªad_wôh_sig«l
+));
 
-139 
+145 
+ªt
+ = 
 	`nk_thªad_¸óã
 (
 íåyPoöt
 , 
+¨gv
+, 
 NULL
-,NULL, 
-Ál£
+, 
+åue
 ,(
 nk_°ack_size_t
 Ë
@@ -2387,15 +2419,54 @@ h™dÀobj
 tid
 ),-1);
 
-140  
+146 i‡(
+ªt
+ != 0){
+
+147 
+	`DEBUG
+("createÉrrorÉxit\n");
+
+148 
+	`nk_thªad_exô
+(
+NULL
+);
+
+150 *
+h™dÀ
+ = 
+h™dÀobj
+;
+
+151 
+nk_thªad
+* 
+thªad
+ = (nk_thªad*Ë(*
+h™dÀ
+)->
+tid
+;
+
+152 
+	`DEBUG
+("============================================\
+==========^^^^^^^^^^%%%%osThªadCª©ê%08x, %ld\n", 
+thªad
+,Åhªad->
+tid
+);
+
+155  
 PTE_OS_OK
 ;
 
-141 
+156 
 	}
 }
 
-149 
+164 
 ±e_osResu…
  
 	$±e_osThªadSèπ
@@ -2405,37 +2476,44 @@ PTE_OS_OK
 h™dÀ
 ){
 
-150 
+168 
 	`nk_thªad_run
-(&(
+(
 h™dÀ
 ->
 tid
-));
+);
 
-151  
+169 
+	`DEBUG
+("=====================\
+ %08x\n", 
+h™dÀ
+);
+
+172  
 PTE_OS_OK
 ;
 
-152 
+173 
 	}
 }
 
-159 
+180 
 	$±e_osThªadExô
 (){
 
-160 
+181 
 	`nk_thªad_exô
 (
 NULL
 );
 
-161 
+182 
 	}
 }
 
-171 
+192 
 ±e_osResu…
  
 	$±e_osThªadWaôF‹End
@@ -2445,7 +2523,7 @@ NULL
 thªadH™dÀ
 ){
 
-172 
+193 
 nk_thªad_t
  *
 thªad
@@ -2455,11 +2533,11 @@ thªadH™dÀ
 tid
 );
 
-173 
+194 
 åue
 ){
 
-174 if(
+195 if(
 thªad
 ->
 °©us
@@ -2467,25 +2545,25 @@ thªad
 NK_THR_EXITED
 ){
 
-175  
+196  
 PTE_OS_OK
 ;
 
-177 
+198 
 	`nk_yõld
 ();
 
-179 
+200 
 	}
 }
 
-184 
+205 
 ±e_osThªadH™dÀ
  
 	$±e_osThªadGëH™dÀ
 (){
 
-186 
+207 
 nk_thªad_t
 * 
 thëhªad
@@ -2493,7 +2571,11 @@ thëhªad
 	`gë_cur_thªad
 ();
 
-187  (
+208 
+	`DEBUG
+("osThreadGetHandle\n");
+
+209  (
 ±e_osThªadH™dÀ
 Ë
 	`pc⁄èöî_of
@@ -2505,11 +2587,11 @@ thªad_wôh_sig«l
 tid
 );
 
-189 
+211 
 	}
 }
 
-194 
+216 
 	$±e_osThªadGëPri‹ôy
 (
 ±e_osThªadH™dÀ
@@ -2517,11 +2599,11 @@ tid
 thªadH™dÀ
 ){
 
-196 
+218 
 	}
 }
 
-203 
+225 
 ±e_osResu…
  
 	$±e_osThªadSëPri‹ôy
@@ -2533,15 +2615,15 @@ thªadH™dÀ
 √wPri‹ôy
 ){
 
-204  
+226  
 PTE_OS_OK
 ;
 
-206 
+228 
 	}
 }
 
-213 
+235 
 ±e_osResu…
  
 	$±e_osThªadDñëe
@@ -2551,7 +2633,11 @@ PTE_OS_OK
 h™dÀ
 ){
 
-214 
+236 
+	`DEBUG
+("osThreadDelete\n");
+
+237 
 	`nk_thªad_de°roy
 (&(
 h™dÀ
@@ -2559,11 +2645,11 @@ h™dÀ
 tid
 ));
 
-215 
+238 
 	}
 }
 
-222 
+245 
 ±e_osResu…
  
 	$±e_osThªadExôAndDñëe
@@ -2573,7 +2659,11 @@ tid
 h™dÀ
 ){
 
-225 
+248 
+	`DEBUG
+("osThreadExitDelete\n");
+
+249 
 	`nk_thªad_de°roy
 (&(
 h™dÀ
@@ -2581,11 +2671,11 @@ h™dÀ
 tid
 ));
 
-226 
+250 
 	}
 }
 
-236 
+260 
 ±e_osResu…
  
 	$±e_osThªadC™˚l
@@ -2595,7 +2685,7 @@ tid
 h™dÀ
 ){
 
-237 
+261 
 h™dÀ
 ->
 sig«l
@@ -2603,11 +2693,11 @@ sig«l
 NK_THREAD_CANCEL
 ;
 
-239 
+263 
 	}
 }
 
-249 
+273 
 ±e_osResu…
  
 	$±e_osThªadCheckC™˚l
@@ -2617,7 +2707,7 @@ NK_THREAD_CANCEL
 h™dÀ
 ){
 
-250 
+274 
 nk_thªad_t
  * 
 thëhªad
@@ -2627,7 +2717,11 @@ h™dÀ
 tid
 );
 
-251 i‡(
+275 
+	`DEBUG
+("osThreadCheckCancel\n");
+
+276 i‡(
 thëhªad
 ->
 °©us
@@ -2635,25 +2729,25 @@ thëhªad
 NK_THR_EXITED
 ){
 
-252  
+277  
 PTE_OS_OK
 ;
 
-254  
+279  
 PTE_OS_INTERRUPTED
 ;
 
-256 
+281 
 	}
 }
 
-261 
+286 
 	$±e_osThªadSÀï
 (
 m£cs
 ){
 
-262 
+287 
 °¨t
  = (Ë
 	`time
@@ -2661,17 +2755,17 @@ m£cs
 NULL
 );
 
-263 
+288 
 íd
  = 
 °¨t
 ;
 
-264 
+289 
 ªs
  = -1;
 
-265  (
+290  (
 íd
 -
 °¨t
@@ -2679,11 +2773,11 @@ NULL
 m£cs
  ){
 
-266 
+291 
 	`nk_yõld
 ();
 
-267 
+292 
 íd
  = ()
 	`time
@@ -2691,35 +2785,35 @@ m£cs
 NULL
 );
 
-269 
+294 
 	}
 }
 
-274 
+299 
 	$±e_osThªadGëMaxPri‹ôy
 (){
 
-277 
+302 
 	}
 }
 
-282 
+307 
 	$±e_osThªadGëMöPri‹ôy
 (){
 
-284 
+309 
 	}
 }
 
-290 
+315 
 	$±e_osThªadGëDeÁu…Pri‹ôy
 (){
 
-292 
+317 
 	}
 }
 
-309 
+334 
 ±e_osResu…
  
 	$±e_osSem≠h‹eCª©e
@@ -2731,7 +2825,7 @@ NULL
 pH™dÀ
 ){
 
-312 *
+337 *
 pH™dÀ
  = 
 	`nk_£m≠h‹e_¸óã
@@ -2741,15 +2835,19 @@ NULL
 öôülVÆue
 ,0,NULL);
 
-313  
+338 
+	`DEBUG
+("osSemaphoreCreate\n");
+
+339  
 PTE_OS_OK
 ;
 
-314 
+340 
 	}
 }
 
-323 
+349 
 ±e_osResu…
  
 	$±e_osSem≠h‹eDñëe
@@ -2759,21 +2857,25 @@ PTE_OS_OK
 h™dÀ
 ){
 
-324 
+350 
 	`nk_£m≠h‹e_ªÀa£
 (
 h™dÀ
 );
 
-325  
+351 
+	`DEBUG
+("osSemaphoreDelete\n");
+
+352  
 PTE_OS_OK
 ;
 
-326 
+353 
 	}
 }
 
-336 
+363 
 ±e_osResu…
  
 	$±e_osSem≠h‹ePo°
@@ -2785,21 +2887,29 @@ h™dÀ
 cou¡
 ){
 
-337 
+364 
+	`DEBUG
+("osSemaphorePost\n");
+
+365 
 cou¡
  > 0){
 
-338 
+366 
 	`nk_£m≠h‹e_up
 (
 h™dÀ
 );
 
-340 
+367 
+cou¡
+--;
+
+369 
 	}
 }
 
-353 
+382 
 ±e_osResu…
  
 	$±e_osSem≠h‹ePíd
@@ -2811,19 +2921,35 @@ h™dÀ
 pTimeout
 ){
 
-354 if(
+383 
+	`DEBUG
+("osSemaphorePend\n");
+
+384 
+SEMAPHORE_LOCK_CONF
+;
+
+385 if(
 pTimeout
  =
 NULL
 ){
 
-355 
-	`nk_thªad_exô
+386 
+	`DEBUG
+("osSemaphorePend NULLÅime\n");
+
+387 
+	`SEMAPHORE_LOCK
 (
-NULL
+h™dÀ
 );
 
-358 
+390  
+PTE_OS_OK
+;
+
+395 
 nk_£m≠h‹e
 * 
 s
@@ -2831,11 +2957,7 @@ s
 h™dÀ
 ;
 
-359 
-SEMAPHORE_LOCK_CONF
-;
-
-360 
+396 
 	`DEBUG
 ("ªÀa£ sem≠h‹êwôhÇamê%s\n",
 s
@@ -2843,7 +2965,7 @@ s
 «me
 );
 
-361 
+397 
 °¨t
  = (Ë
 	`time
@@ -2851,17 +2973,17 @@ s
 NULL
 );
 
-362 
+398 
 íd
  = 
 °¨t
 ;
 
-363 
+399 
 ªs
  = -1;
 
-364  (
+400  (
 íd
 -
 °¨t
@@ -2869,7 +2991,15 @@ NULL
 pTimeout
  ){
 
-365 
+401 
+	`DEBUG
+("osSem≠h‹ePíd %d \n", 
+íd
+-
+°¨t
+);
+
+402 
 ªs
  = 
 	`SEMAPHORE_TRY_LOCK
@@ -2877,15 +3007,15 @@ pTimeout
 s
 );
 
-366 if(
+403 if(
 ªs
  == 0){
 
-367  
+404  
 PTE_OS_OK
 ;
 
-369 
+406 
 íd
  = ()
 	`time
@@ -2893,15 +3023,15 @@ PTE_OS_OK
 NULL
 );
 
-371  
+408  
 PTE_OS_TIMEOUT
 ;
 
-373 
+410 
 	}
 }
 
-388 
+425 
 ±e_osResu…
  
 	$±e_osSem≠h‹eC™˚ŒabÀPíd
@@ -2913,7 +3043,7 @@ h™dÀ
 pTimeout
 ){
 
-389 
+426 
 nk_thªad_t
 * 
 thëhªad
@@ -2921,7 +3051,7 @@ thëhªad
 	`gë_cur_thªad
 ();
 
-390 
+427 
 ±e_osThªadH™dÀ
  
 osh™dÀ
@@ -2935,19 +3065,29 @@ thªad_wôh_sig«l
 tid
 );
 
-391 if(
+428 
+	`DEBUG
+("osSemaphorecancelablepend\n");
+
+429 
+SEMAPHORE_LOCK_CONF
+;
+
+430 
+ªs
+ = -1;
+
+431 if(
 pTimeout
  =
 NULL
 ){
 
-392 
-pTimeout
- =
-NULL
+432 
+åue
 ){
 
-393 if(
+433 if(
 osh™dÀ
 ->
 sig«l
@@ -2955,15 +3095,27 @@ sig«l
 NK_THREAD_CANCEL
 ){
 
-394  
+434  
 PTE_OS_INTERRUPTED
 ;
 
-396 
-	`nk_yõld
-();
+436 
+ªs
+ = 
+	`SEMAPHORE_TRY_LOCK
+(
+h™dÀ
+);
 
-399 
+437 if(
+ªs
+ == 0){
+
+438  
+PTE_OS_OK
+;
+
+442 
 nk_£m≠h‹e
 * 
 s
@@ -2971,11 +3123,11 @@ s
 h™dÀ
 ;
 
-400 
+443 
 SEMAPHORE_LOCK_CONF
 ;
 
-401 
+444 
 	`DEBUG
 ("ªÀa£ sem≠h‹êwôhÇamê%s\n",
 s
@@ -2983,7 +3135,7 @@ s
 «me
 );
 
-402 
+445 
 °¨t
  = (Ë
 	`time
@@ -2991,17 +3143,13 @@ s
 NULL
 );
 
-403 
+446 
 íd
  = 
 °¨t
 ;
 
-404 
-ªs
- = -1;
-
-405  (
+447  (
 íd
 -
 °¨t
@@ -3009,7 +3157,7 @@ NULL
 pTimeout
  ){
 
-406 if(
+448 if(
 osh™dÀ
 ->
 sig«l
@@ -3017,11 +3165,11 @@ sig«l
 NK_THREAD_CANCEL
 ){
 
-407  
+449  
 PTE_OS_INTERRUPTED
 ;
 
-409 
+451 
 ªs
  = 
 	`SEMAPHORE_TRY_LOCK
@@ -3029,15 +3177,15 @@ PTE_OS_INTERRUPTED
 s
 );
 
-410 if(
+452 if(
 ªs
  == 0){
 
-411  
+453  
 PTE_OS_OK
 ;
 
-413 
+455 
 íd
  = ()
 	`time
@@ -3045,15 +3193,15 @@ PTE_OS_OK
 NULL
 );
 
-415  
+457  
 PTE_OS_TIMEOUT
 ;
 
-417 
+459 
 	}
 }
 
-429 
+471 
 ±e_osResu…
  
 	$±e_osTlsSëVÆue
@@ -3063,7 +3211,11 @@ key
 vÆue
 ){
 
-430 
+472 
+	`DEBUG
+("pte_osTlsSetvalue\n");
+
+473 
 	`nk_és_£t
 (
 key
@@ -3071,39 +3223,43 @@ key
 vÆue
 );
 
-431  
+474  
 PTE_OS_OK
 ;
 
-432 
+475 
 	}
 }
 
-444 * 
+487 * 
 	$±e_osTlsGëVÆue
 (
 key
 ){
 
-445  
+488 
+	`DEBUG
+("osTlsGetValue\n");
+
+489  
 	`nk_és_gë
 (
 key
 );
 
-446 
+490 
 	}
 }
 
-452 
+496 
 	$±e_osTlsInô
 (){
 
-454 
+498 
 	}
 }
 
-465 
+509 
 ±e_osResu…
  
 	$±e_osTlsAŒoc
@@ -3111,7 +3267,11 @@ key
 pKey
 ){
 
-466 
+510 
+	`DEBUG
+("osTlsAlloc\n");
+
+511 
 	`nk_és_key_¸óã
 (
 pKey
@@ -3119,15 +3279,15 @@ pKey
 NULL
 );
 
-467  
+512  
 PTE_OS_OK
 ;
 
-468 
+513 
 	}
 }
 
-477 
+522 
 ±e_osResu…
  
 	$±e_osTlsFªe
@@ -3135,21 +3295,25 @@ PTE_OS_OK
 key
 ){
 
-478 
+523 
+	`DEBUG
+("osTlsFree\n");
+
+524 
 	`nk_és_key_dñëe
 (
 key
 );
 
-479  
+525  
 PTE_OS_OK
 ;
 
-480 
+526 
 	}
 }
 
-500 
+546 
 	$±e_osAtomicExch™ge
 (*
 pT¨g
@@ -3157,7 +3321,9 @@ pT¨g
 vÆ
 ){
 
-502  (Ë
+548 
+ªt
+ = (Ë
 	`xchg64
 ((**)(&
 pT¨g
@@ -3165,11 +3331,23 @@ pT¨g
 vÆ
 ));
 
-505 
+549 
+	`DEBUG
+("AtomicEXCHANGE, %d , %d\n", *
+pT¨g
+, 
+ªt
+ );
+
+551  *
+pT¨g
+;
+
+554 
 	}
 }
 
-524 
+573 
 	$±e_osAtomicCom∑ªExch™ge
 (*
 pde°
@@ -3179,7 +3357,7 @@ exch™ge
 comp
 ){
 
-525  
+574  
 	`__sync_vÆ_com∑ª_™d_sw≠
 (
 pde°
@@ -3189,11 +3367,11 @@ comp
 exch™ge
 );
 
-527 
+576 
 	}
 }
 
-543 
+592 
 	$±e_osAtomicExch™geAdd
 (vﬁ©ûe* 
 pde°
@@ -3201,7 +3379,7 @@ pde°
 vÆue
 ){
 
-544  
+593  
 	`__sync_„tch_™d_add
 (
 pde°
@@ -3209,43 +3387,43 @@ pde°
 vÆue
 );
 
-546 
+595 
 	}
 }
 
-561 
+610 
 	$±e_osAtomicDe¸emít
 (*
 pde°
 ){
 
-562  
+611  
 	`__sync_„tch_™d_sub
 (
 pde°
 ,1);
 
-564 
+613 
 	}
 }
 
-574 
+623 
 	$±e_osAtomicIn¸emít
 (*
 pde°
 ){
 
-575  
+624  
 	`__sync_„tch_™d_add
 (
 pde°
 ,1);
 
-577 
+626 
 	}
 }
 
-580 
+629 
 	$·ime
 (
 timeb
@@ -3253,31 +3431,31 @@ timeb
 tb
 ){
 
-581 
+630 
 tb
 ->
 time
  = 0;
 
-582 
+631 
 tb
 ->
 mûlôm
  = 0;
 
-583 
+632 
 tb
 ->
 timez⁄e
  = 0;
 
-584 
+633 
 tb
 ->
 d°Êag
 =0;
 
-586 
+635 
 	}
 }
 
@@ -3910,7 +4088,7 @@ uöt8_t
 {
 
 15 
-nk_thªad_t
+nk_thªad_id_t
  
 	mtid
 ;
@@ -7623,6 +7801,8 @@ usög
 	$±e_thªadSèπ
  (*
 vthªadP¨ms
+, ** 
+out
 )
 
 81 
@@ -15447,7 +15627,43 @@ EBUSY
 	~"im∂emít.h
 "
 
-51 
+50 
+	#ERROR
+(
+fmt
+, 
+¨gs
+...Ë
+	`ERROR_PRINT
+("emb±hªad: " fmt, ##¨gs)
+
+	)
+
+51 
+	#DEBUG
+(
+fmt
+, 
+¨gs
+...Ë
+	`DEBUG_PRINT
+("emb±hªad: " fmt, ##¨gs)
+
+	)
+
+52 
+	#INFO
+(
+fmt
+, 
+¨gs
+...Ë
+	`INFO_PRINT
+("emb±hªad: " fmt, ##¨gs)
+
+	)
+
+56 
 	$±hªad_muãx_öô
  (
 ±hªad_muãx_t
@@ -15459,27 +15675,27 @@ muãx
 ©å
 )
 
-53 
+58 
 ªsu…
  = 0;
 
-54 
+59 
 ±hªad_muãx_t
  
 mx
 ;
 
-57 i‡(
+62 i‡(
 muãx
  =
 NULL
 )
 
-59  
+64  
 EINVAL
 ;
 
-62 
+67 
 mx
  = (
 ±hªad_muãx_t
@@ -15487,41 +15703,57 @@ mx
 	`ˇŒoc
  (1,  (*mx));
 
-64 i‡(
+68 
+	`mem£t
+(
+mx
+, 0, 1*(*mx));
+
+69 i‡(
 mx
  =
 NULL
 )
 
-66 
+71 
 ªsu…
  = 
 ENOMEM
 ;
 
-70 
+75 
 mx
 ->
 lock_idx
  = 0;
 
-71 
+76 
 mx
 ->
 ªcursive_cou¡
  = 0;
 
-72 
+77 
+	`DEBUG
+("©åádd∏%08x\n", 
+©å
+);
+
+78 
+	`DEBUG
+("©å köd %08x\n", *
+©å
+);
+
+80 
 mx
 ->
 köd
- = (
-©å
- =
-NULL
- || *attr == NULL
+ = 
+PTHREAD_MUTEX_DEFAULT
+;
 
-73 ? 
+83 ? 
 PTHREAD_MUTEX_DEFAULT
  : (*
 ©å
@@ -15529,7 +15761,11 @@ PTHREAD_MUTEX_DEFAULT
 köd
 );
 
-74 
+84 
+	`DEBUG
+("pass mxkind\n");
+
+85 
 mx
 ->
 ow√rThªad
@@ -15539,7 +15775,7 @@ p
 NULL
 ;
 
-76 
+87 
 	`±e_osSem≠h‹eCª©e
 (0,&
 mx
@@ -15547,17 +15783,17 @@ mx
 h™dÀ
 );
 
-80 *
+91 *
 muãx
  = 
 mx
 ;
 
-82  (
+93  (
 ªsu…
 );
 
-83 
+94 
 	}
 }
 

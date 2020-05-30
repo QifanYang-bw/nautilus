@@ -1069,7 +1069,7 @@ struct nk_sched_thread_state *nk_sched_thread_state_init(struct nk_thread *threa
     }
     
     t->thread = thread;
-
+    DEBUG("MJC===========mjc==================== constraints type %d\n", t->constraints.type);
     return t;
 }
 
