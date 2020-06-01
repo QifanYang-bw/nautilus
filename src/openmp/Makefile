@@ -4,7 +4,7 @@ obj-y += \
 	sysconf.o \
 	qsort.o \
 	pthread_helper.o \
-	omptest.o
+#	omptest.o
 
 
 
