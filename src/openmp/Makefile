@@ -1,10 +1,10 @@
 CFLAGS += -fopenmp -Iinclude/rt/openmp
 
 obj-y += \
-	omptest.o \
 	sysconf.o \
 	qsort.o \
-	pthread_helper.o
+	pthread_helper.o \
+	omptest.o
 
 
 

@@ -45,7 +45,13 @@
 #include <nautilus/nautilus.h>
 #include "pthread.h"
 #include "implement.h"
+#define DEBUG(fmt, args...)
 
+#define DEBUG(fmt, args...)
+#ifdef NAUT_CONFIG_OPENMP_RT_DEBUG
+#undef DEBUG
+#define DEBUG(fmt, args...) DEBUG_PRINT("mutex_lock: " fmt, ##args)
+#endif
 
 int
 pthread_mutex_lock (pthread_mutex_t * mutex)
@@ -137,6 +143,7 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
         }
 
     }
+  DEBUG("mx :%d, mutex:%d \n", mx->lock_idx, (*mutex)->lock_idx);
 
   return (result);
 }

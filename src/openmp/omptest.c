@@ -17,13 +17,13 @@ static int handle_gputest (char * buf, void * priv)
     if (0 != pthread_init()){
      ERROR("pthread initilize failed\n");
     }
-    #pragma omp parallel num_threads(5)
+    #pragma omp parallel num_threads(10)
     {
       
       /* long id = getpid(); */
       /* nk_vc_printf("****omptest==thread id %d", id);	 */
-       #pragma omp for nowait schedule(static,1) 
-        for( i=0;i<10;i++){
+       #pragma omp for schedule(static, 1) 
+        for( i=0;i<8;i++){
 	 long id = getpid();
          nk_vc_printf("****omptest==thread id %d\n", id);  
          nk_vc_printf("*****working %d\n",i);

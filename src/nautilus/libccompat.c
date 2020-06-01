@@ -911,8 +911,15 @@ GEN_DEF(__divsc3)
 /* define omp function */
 
 #define ERROR(fmt, args...) ERROR_PRINT("kmp: " fmt, ##args)
-#define DEBUG(fmt, args...) DEBUG_PRINT("kmp: " fmt, ##args)
+#define DEBUG(fmt, args...)
 #define INFO(fmt, args...)   INFO_PRINT("kmp: " fmt, ##args)
+
+
+#define DEBUG(fmt, args...)
+#ifdef NAUT_CONFIG_OPENMP_RT_DEBUG
+#undef DEBUG
+#define DEBUG(fmt, args...) DEBUG_PRINT("kmp: " fmt, ##args)
+#endif
 
 static spinlock_t env_list_lock;
 #define STATE_LOCK_CONF uint8_t _state_lock_flags
@@ -1065,7 +1072,9 @@ vfprintf (FILE * stream, const char * format, va_list arg)
     //malloc()
       //fmformat
    DEBUG("====");
+   #ifdef NAUT_CONFIG_OPENMP_RT_DEBUG
    nk_vc_printf(format,arg);
+   #endif
    //nk_vc_printf(format,);
     return 0;
     // return -1;

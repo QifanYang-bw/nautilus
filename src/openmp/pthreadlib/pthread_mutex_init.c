@@ -48,9 +48,14 @@
 
 
 #define ERROR(fmt, args...) ERROR_PRINT("embpthread: " fmt, ##args)
-#define DEBUG(fmt, args...) DEBUG_PRINT("embpthread: " fmt, ##args)
+#define DEBUG(fmt, args...) 
 #define INFO(fmt, args...)   INFO_PRINT("embpthread: " fmt, ##args)
 
+#define DEBUG(fmt, args...)
+#ifdef NAUT_CONFIG_OPENMP_RT_DEBUG
+#undef DEBUG
+#define DEBUG(fmt, args...) DEBUG_PRINT("embpthread: " fmt, ##args)
+#endif
 
 int
 pthread_mutex_init (pthread_mutex_t * mutex, const pthread_mutexattr_t * attr)

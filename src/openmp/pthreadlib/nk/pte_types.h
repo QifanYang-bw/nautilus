@@ -11,6 +11,12 @@ struct pmutex{
   spinlock_t lock;
   uint8_t  flags;
 };
+
+struct psemaphore{
+  spinlock_t lock;
+  int count;
+  uint8_t flags;
+};
 struct thread_with_signal{
   nk_thread_id_t tid;
   uint8_t signal;
@@ -19,7 +25,7 @@ struct thread_with_signal{
 typedef  struct pmutex* pte_osMutexHandle;
 typedef  nk_thread_fun_t pte_osThreadEntryPoint;
 typedef  struct thread_with_signal* pte_osThreadHandle;
-typedef struct nk_semaphore* pte_osSemaphoreHandle;
+typedef struct psemaphore* pte_osSemaphoreHandle;
 
 typedef enum _pthread_signal{
   NK_THREAD_NORM,

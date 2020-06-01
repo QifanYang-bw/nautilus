@@ -7,19 +7,24 @@
 #include <nautilus/semaphore.h>
 
 #define ERROR(fmt, args...) ERROR_PRINT("embpthread: " fmt, ##args)
-#define DEBUG(fmt, args...) DEBUG_PRINT("embpthread: " fmt, ##args)
+#define DEBUG(fmt, args...)
 #define INFO(fmt, args...)   INFO_PRINT("embpthread: " fmt, ##args)
 
+#define DEBUG(fmt, args...)
+#ifdef NAUT_CONFIG_OPENMP_RT_DEBUG
+#undef DEBUG
+#define DEBUG(fmt, args...) DEBUG_PRINT("empthread: " fmt, ##args)
+#endif
 
 #define STATE_UNLOCK(a,b) spin_unlock_irq_restore(a,b)
 #define STATE_TRY_LOCK(a,b) spin_try_lock_irq_save(a,b)
 #define STATE_LOCK(a) spin_lock_irq_save(a)
 
-#define SEMAPHORE_LOCK_CONF uint8_t _semaphore_lock_flags
-#define SEMAPHORE_LOCK(s) _semaphore_lock_flags = spin_lock_irq_save(&(s)->lock)
-#define SEMAPHORE_TRY_LOCK(s) spin_try_lock_irq_save(&(s)->lock,&_semaphore_lock_flags)
-#define SEMAPHORE_UNLOCK(s) spin_unlock_irq_restore(&(s)->lock, _semaphore_lock_flags)
-#define SEMAPHORE_UNIRQ(s) irq_enable_restore(_semaphore_lock_flags)
+/* #define SEMAPHORE_LOCK_CONF uint8_t _semaphore_lock_flags */
+/* #define SEMAPHORE_LOCK(s) _semaphore_lock_flags = spin_lock_irq_save(&(s)->lock) */
+/* #define SEMAPHORE_TRY_LOCK(s) spin_try_lock_irq_save(&(s)->lock,&_semaphore_lock_flags) */
+/* #define SEMAPHORE_UNLOCK(s) spin_unlock_irq_restore(&(s)->lock, _semaphore_lock_flags) */
+/* #define SEMAPHORE_UNIRQ(s) irq_enable_restore(_semaphore_lock_flags) */
 
 #define poffsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER)
 #define pcontainer_of(ptr, type, member) ({                      \
@@ -47,7 +52,7 @@ pte_osResult pte_osInit(void){
 pte_osResult pte_osMutexCreate(pte_osMutexHandle *pHandle){
 
    *pHandle = malloc(sizeof(struct pmutex));
-   spinlock_init((*pHandle)->lock);
+   spinlock_init(&((*pHandle)->lock));
    DEBUG("osMutexCreate\n");
    return PTE_OS_OK;
 }
@@ -301,7 +306,7 @@ void pte_osThreadSleep(unsigned int msecs){
  * Returns the maximum allowable priority
  */
 int pte_osThreadGetMaxPriority(){
-  return 0;
+  return 3;
 
 }
 
@@ -337,8 +342,10 @@ int pte_osThreadGetDefaultPriority(){
  */
 pte_osResult pte_osSemaphoreCreate(int initialValue, pte_osSemaphoreHandle *pHandle){
   //pte_osSemaphoreHandle is nk_semaphore
-  //*pHandle = malloc(sizeof(struct nk_semaphore));
-  *pHandle = nk_semaphore_create(NULL,initialValue,0,NULL);   
+  *pHandle = malloc(sizeof(struct psemaphore));
+  spinlock_init(&((*pHandle)->lock));
+  (*pHandle)->count = 0;
+  //*pHandle->sem = nk_semaphore_create(NULL,initialValue,0,NULL);   
   DEBUG("osSemaphoreCreate\n");
   return PTE_OS_OK;
 }
@@ -351,7 +358,9 @@ pte_osResult pte_osSemaphoreCreate(int initialValue, pte_osSemaphoreHandle *pHan
  * @return PTE_OS_OK - Semaphore successfully deleted.
  */
 pte_osResult pte_osSemaphoreDelete(pte_osSemaphoreHandle handle){
-  nk_semaphore_release(handle);
+  //nk_semaphore_release(handle);
+  spinlock_deinit(&(handle->lock));
+  free(handle);
   DEBUG("osSemaphoreDelete\n");
   return PTE_OS_OK;
 }
@@ -365,11 +374,11 @@ pte_osResult pte_osSemaphoreDelete(pte_osSemaphoreHandle handle){
  * @return PTE_OS_OK - semaphore successfully released.
  */
 pte_osResult pte_osSemaphorePost(pte_osSemaphoreHandle handle, int count){
-  DEBUG("osSemaphorePost\n");
-  while(count > 0){
-    nk_semaphore_up(handle);
-    count--;
-  }
+    DEBUG("osSemaphorePost\n");
+    handle->flags = STATE_LOCK(&(handle->lock));
+    handle->count += count;
+    STATE_UNLOCK(&(handle->lock), handle->flags);
+    return PTE_OS_OK;
 }
 
 /**
@@ -385,28 +394,41 @@ pte_osResult pte_osSemaphorePost(pte_osSemaphoreHandle handle, int count){
  */
 pte_osResult pte_osSemaphorePend(pte_osSemaphoreHandle handle, unsigned int *pTimeout){
    DEBUG("osSemaphorePend\n");
-   SEMAPHORE_LOCK_CONF;
    if(pTimeout == NULL){
+     while(1){
        DEBUG("osSemaphorePend NULL time\n");
-       SEMAPHORE_LOCK(handle);
+       handle->flags = STATE_LOCK(&(handle->lock));
+       if(handle->count > 0){
+         handle->count--;
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 return PTE_OS_OK;
+       }else{
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 nk_yield();
+       }
+
+     }
        // nk_yield();
        //nk_thread_exit(NULL);
-       return PTE_OS_OK;
        //nk_yield();
        //nk_thread_exit(NULL);
    }else{
-     
-    struct nk_semaphore* s = handle;
-    DEBUG("release semaphore with name %s\n",s->name);
+  
+    DEBUG("release semaphore\n");
     unsigned int start = (unsigned int) time(NULL);
     unsigned int end = start;
     int res = -1;
     while( (end-start) < *pTimeout ){
       DEBUG("osSemaphorePend %d \n", end-start);
-      res = SEMAPHORE_TRY_LOCK(s);
-      if(res == 0){
-        return PTE_OS_OK;
-      }
+      handle->flags = STATE_LOCK(&(handle->lock));
+      if(handle->count > 0){
+         handle->count--;
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 return PTE_OS_OK;
+       }else{
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 nk_yield();
+       }
        end = (unsigned int)time(NULL);
     }
     return PTE_OS_TIMEOUT;
@@ -430,36 +452,44 @@ pte_osResult pte_osSemaphoreCancellablePend(pte_osSemaphoreHandle handle, unsign
      nk_thread_t* thethread= get_cur_thread();
      pte_osThreadHandle oshandle = pcontainer_of(thethread, struct thread_with_signal, tid);
      DEBUG("osSemaphorecancelablepend\n");
-     SEMAPHORE_LOCK_CONF;
      int res = -1;
-     if(pTimeout == NULL){
+   if(pTimeout == NULL){
      while(true){
        if(oshandle->signal == NK_THREAD_CANCEL){
+	 nk_thread_exit(NULL);
          return PTE_OS_INTERRUPTED;
        }
-       res = SEMAPHORE_TRY_LOCK(handle);
-       if(res == 0){
-         return PTE_OS_OK;
+       handle->flags = STATE_LOCK(&(handle->lock));
+       if(handle->count > 0){
+         handle->count--;
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 return PTE_OS_OK;
+       }else{
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 nk_yield();
        }
-      }
-     }else{
-     struct nk_semaphore* s = handle;
-     SEMAPHORE_LOCK_CONF;
-     DEBUG("release semaphore with name %s\n",s->name);
+     }
+   }else{
+     DEBUG("release semaphore\n");
      unsigned int start = (unsigned int) time(NULL);
      unsigned int end = start;
      while( (end-start) < *pTimeout ){
        if(oshandle->signal == NK_THREAD_CANCEL){
          return PTE_OS_INTERRUPTED;
        }
-       res = SEMAPHORE_TRY_LOCK(s);
-       if(res == 0){
-         return PTE_OS_OK;
+       handle->flags = STATE_LOCK(&(handle->lock));
+       if(handle->count > 0){
+         handle->count--;
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 return PTE_OS_OK;
+       }else{
+	 STATE_UNLOCK(&(handle->lock), handle->flags);
+	 nk_yield();
        }
         end = (unsigned int)time(NULL);
      }
      return PTE_OS_TIMEOUT;
-  }
+   }
 }
 
 
@@ -549,9 +579,12 @@ pte_osResult pte_osTlsFree(unsigned int key){
  */
 int pte_osAtomicExchange(int *pTarg, int val){
 
-  //int origin = *pTarg;
-  return *((int*) xchg64((void**)(&pTarg),(void*)(&val)));
-  //DEBUG("AtomicEXCHANGE, ORIG %d , NOW %d val %d ret %d\n", origin, *pTarg, val, *ret);
+  int origin = *pTarg;
+  __atomic_exchange_n(pTarg,val,__ATOMIC_SEQ_CST);
+  DEBUG("AtomicEXCHANGE, ORIG %d , NOW %d val %d ret %d\n", origin, *pTarg, val);
+  return origin;
+    //return *((int*) xchg64((void**)(&pTarg),(void*)(&val)));
+ 
   // return 0;
   // return origin;
   //???
@@ -642,3 +675,4 @@ int ftime(struct timeb *tb){
   tb->dstflag=0;
   return 0;
 }
+
