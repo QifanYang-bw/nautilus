@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Nautilus version: 
- * Mon May 25 01:33:03 2020
+ * Mon Jun  1 11:41:18 2020
  */
 #define AUTOCONF_INCLUDED
 
@@ -149,7 +149,7 @@
 #undef NAUT_CONFIG_NESL_RT
 #define NAUT_CONFIG_OPENMP_RT 1
 #define NAUT_CONFIG_OPENMP_RT_OMP 1
-#define NAUT_CONFIG_OPENMP_RT_INSTALL_DIR "/home/446/openmp/lib"
+#define NAUT_CONFIG_OPENMP_RT_INSTALL_DIR "./openmp/build/runtime/src"
 #undef NAUT_CONFIG_OPENMP_RT_GOMP
 #define NAUT_CONFIG_OPENMP_RT_DEBUG 1
 #define NAUT_CONFIG_OPENMP_RT_TESTS 1
