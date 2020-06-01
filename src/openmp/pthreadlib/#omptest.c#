@@ -122,16 +122,15 @@ void ompgauss() {
   int norm, row, col;  /* Normalization row, and zeroing
 			* element row and col */
   float multiplier;
-  //doneflag[0] = 1;
   
   printf("Computing using omp.\n");
 
   /* Gaussian elimination */
   
   #pragma omp parallel private(col, row,norm, multiplier) num_threads(procs)
-  for (norm = 0; norm < N - 1; norm++) {
+  for (norm = 0; norm < N - 1; norm++){
   {
-#pragma omp for schedule(static,1)
+      #pragma omp for schedule(static,1)
       for (row = norm + 1; row < N; row++) {
 
         multiplier = A[row][norm] / A[norm][norm];
@@ -143,7 +142,7 @@ void ompgauss() {
         int id = getpid();
 	//printf("tid:%d, B[%d]: %f ", id,row, B[row]);
       }
-  }
+   }
   }
   /* (Diagonal elements are not normalized to 1.  This is treated in back
    * substitution.)
